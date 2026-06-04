@@ -3,344 +3,859 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hunger Action Heroes - 6-Week Sequence</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>HAHU Agency Pitch - Email Sequence</title>
     <style>
         :root {
-            --comic-red: #D22B48;
-            --comic-blue: #1C658C;
-            --comic-yellow: #FFB800;
+            --comic-red: #ff3366;
+            --comic-yellow: #fff200;
+            --comic-blue: #00ccff;
             --comic-black: #111111;
-            --comic-green: #3B9E3A;
-            --comic-border: 4px solid var(--comic-black);
-            --bg-pattern: radial-gradient(circle, #000000 2px, transparent 2px);
+            --comic-white: #ffffff;
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Comic Sans MS', 'Arial', sans-serif;
             background-color: #f4f4f4;
-            background-image: var(--bg-pattern);
+            background-image: radial-gradient(#ccc 15%, transparent 16%), radial-gradient(#ccc 15%, transparent 16%);
             background-size: 20px 20px;
-            background-position: 0 0;
-            background-attachment: fixed;
+            background-position: 0 0, 10px 10px;
             color: var(--comic-black);
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
             min-height: 100vh;
         }
 
-        .portal-container {
-            width: 100%;
-            max-width: 1100px;
-            background: white;
-            border: var(--comic-border);
-            box-shadow: 12px 12px 0px var(--comic-black);
-            display: flex;
-            margin: 40px 20px;
+        /* Responsive Layout */
+        @media (min-width: 768px) {
+            body {
+                flex-direction: row;
+            }
+            .sidebar {
+                width: 280px;
+                height: 100vh;
+                position: fixed;
+                overflow-y: auto;
+            }
+            .main-content {
+                margin-left: 280px;
+                width: calc(100% - 280px);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+                border-bottom: 4px solid var(--comic-black);
+                border-right: none !important;
+                display: flex;
+                flex-direction: column;
+            }
+            .nav-links {
+                display: flex;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 10px;
+            }
+            .nav-links li {
+                margin-bottom: 0 !important;
+                margin-right: 15px;
+            }
         }
 
         .sidebar {
-            width: 300px;
-            background: var(--comic-red);
-            padding: 2rem;
-            color: white;
-            border-right: var(--comic-border);
-            display: flex;
-            flex-direction: column;
+            background-color: var(--comic-yellow);
+            border-right: 4px solid var(--comic-black);
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 100;
         }
 
         .sidebar h1 {
-            font-family: 'Bangers', cursive;
-            font-size: 3rem;
-            line-height: 1.1;
-            margin-top: 0;
-            text-shadow: 3px 3px 0px var(--comic-black);
-            letter-spacing: 2px;
-        }
-
-        .nav-btn {
-            background: white;
-            color: var(--comic-black);
-            border: 2px solid var(--comic-black);
-            padding: 15px;
-            margin-bottom: 15px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 1.1rem;
-            cursor: pointer;
-            text-align: left;
-            transition: all 0.2s ease;
-            border-radius: 4px;
-            box-shadow: 4px 4px 0px var(--comic-black);
-        }
-
-        .nav-btn:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0px var(--comic-black);
-        }
-
-        .nav-btn.active {
-            background: var(--comic-yellow);
-        }
-
-        .email-display {
-            flex-grow: 1;
-            padding: 3rem;
-            background: white;
-            position: relative;
-        }
-
-        .email-container {
-            display: none;
-        }
-
-        .email-container.active {
-            display: block;
-        }
-
-        .email-subject {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px dashed #ccc;
-        }
-
-        .email-body {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            white-space: pre-line;
-        }
-
-        .email-hero-image {
-            width: 100%;
-            height: auto;
-            max-height: 450px;
-            object-fit: contain;
+            font-size: 24px;
+            text-transform: uppercase;
+            font-weight: 900;
+            background: var(--comic-white);
+            padding: 10px;
             border: 3px solid var(--comic-black);
+            box-shadow: 4px 4px 0 var(--comic-black);
+            transform: rotate(-2deg);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links li {
+            margin-bottom: 15px;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 12px 15px;
+            background-color: var(--comic-white);
+            color: var(--comic-black);
+            text-decoration: none;
+            font-weight: bold;
+            border: 3px solid var(--comic-black);
+            box-shadow: 4px 4px 0 var(--comic-black);
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--comic-black);
+            background-color: var(--comic-blue);
+            color: var(--comic-white);
+        }
+
+        .main-content {
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .email-section {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--comic-white);
+            border: 4px solid var(--comic-black);
+            box-shadow: 8px 8px 0 var(--comic-black);
+            padding: 20px;
+            margin-bottom: 40px;
             border-radius: 8px;
-            clear: both;
-            margin-top: 1rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 4px 4px 0px var(--comic-black);
-            transition: transform 0.2s ease;
         }
 
-        .email-hero-image:hover {
-            transform: scale(1.01);
+        .email-section.active {
+            display: block;
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .copy-btn {
-            float: right;
-            margin-bottom: 1rem;
-            background: var(--comic-blue);
-            color: white;
+        @keyframes popIn {
+            0% { transform: scale(0.95); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .email-header {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 3px dashed var(--comic-black);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .subject-line {
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 10px 15px;
             border: 2px solid var(--comic-black);
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            padding: 8px 16px;
-            cursor: pointer;
             border-radius: 4px;
-            box-shadow: 2px 2px 0px var(--comic-black);
-            transition: all 0.1s ease;
+            flex-grow: 1;
         }
 
-        .strategy-note {
-            background-color: #E8F4FA;
-            border: 2px solid var(--comic-blue);
-            padding: 1.5rem;
-            margin-top: 3rem;
-            border-radius: 8px;
-            font-style: italic;
+        .subject-line strong {
+            color: var(--comic-red);
+            text-transform: uppercase;
+            font-family: 'Comic Sans MS', sans-serif;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background-color: var(--comic-red);
+            color: var(--comic-white);
+            border: 3px solid var(--comic-black);
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 4px 4px 0 var(--comic-black);
+            text-transform: uppercase;
+            transition: all 0.1s;
+        }
+
+        .btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--comic-black);
+        }
+
+        .btn:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0 0 0 var(--comic-black);
+        }
+
+        /* The actual rendered HTML view inside the portal */
+        .email-preview {
+            border: 2px solid #ccc;
+            padding: 0;
+            background: #fff;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--comic-black);
+            color: var(--comic-white);
+            padding: 15px 25px;
+            font-weight: bold;
+            border: 3px solid var(--comic-white);
+            box-shadow: 4px 4px 0 var(--comic-red);
+            border-radius: 4px;
+            transform: translateY(150px);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1000;
+        }
+        
+        .toast.show {
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <div class="portal-container">
-        <div class="sidebar">
-            <h1>HAHU<br>AGENCY<br>PITCH</h1>
-            <button class="nav-btn active" onclick="showEmail(1)">Week 1: The HVCO</button>
-            <button class="nav-btn" onclick="showEmail(2)">Week 2: Empathy Deep-Dive</button>
-            <button class="nav-btn" onclick="showEmail(3)">Week 3: The Mechanism</button>
-            <button class="nav-btn" onclick="showEmail(4)">Week 4: Silent Objection</button>
-            <button class="nav-btn" onclick="showEmail(5)">Week 5: Godfather Offer</button>
-            <button class="nav-btn" onclick="showEmail(6)">Week 6: The Break-Up</button>
-        </div>
-        <div class="email-display">
 
-            <div class="email-container active" id="email-1">
-                <button class="copy-btn" onclick="copyEmail('email-1-text')">Copy Email</button>
-                <img src="assets/week_1.png" alt="Week 1 Hero" class="email-hero-image">
-                <div class="email-subject">Subject: SEL engagement at [School Name]</div>
-                <div class="email-body" id="email-1-text">
-Hi [First Name],
+    <div class="sidebar">
+        <h1>HAHU Email Pitch</h1>
+        <ul class="nav-links">
+            <li><a href="#week-1" onclick="showEmail(1, this)">Week 1</a></li>
+            <li><a href="#week-2" onclick="showEmail(2, this)">Week 2</a></li>
+            <li><a href="#week-3" onclick="showEmail(3, this)">Week 3</a></li>
+            <li><a href="#week-4" onclick="showEmail(4, this)">Week 4</a></li>
+            <li><a href="#week-5" onclick="showEmail(5, this)">Week 5</a></li>
+            <li><a href="#week-6" onclick="showEmail(6, this)">Week 6</a></li>
 
-I know you're constantly evaluating ways to keep students engaged with Social-Emotional Learning (SEL) without adding to your teachers' workload. 
-
-We've put together a free, zero-prep activity sheet that uses superhero storytelling to teach students about community empathy and food waste. 
-
-It takes exactly 5 minutes for a teacher to implement, and it aligns perfectly with national SEL standards. 
-
-Would you like me to send the PDF over for your teachers to try out? 
-
-Best, 
-[Name]
-Director of Social Impact, Hunger Action Heroes Unite!
-                </div>
-                <div class="strategy-note">
-                    <strong>Strategy:</strong> The HVCO & Halo Strategy: We provide High-Value Content Offers (e.g., free SEL lesson plans) to capture the 97% of the market not ready to buy today.
-                </div>
-            </div>
-
-            <div class="email-container" id="email-2">
-                <button class="copy-btn" onclick="copyEmail('email-2-text')">Copy Email</button>
-                <img src="assets/week_2.png" alt="Week 2 Hero" class="email-hero-image">
-                <div class="email-subject">Subject: Quick question about your community initiatives</div>
-                <div class="email-body" id="email-2-text">
-Hi [First Name],
-
-Following up on the activity sheet—I’m curious, what is [School Name]’s primary focus this year for getting students involved in local community service? 
-
-Most administrators tell us that getting middle schoolers to genuinely care about local issues—like the fact that 1 in 5 children face hunger while millions of pounds of food go to waste—is an uphill battle. 
-
-That’s why we created a narrative-driven approach. When students read about characters like *Demeter* rescuing food, the empathy clicks instantly. 
-
-If you have 10 minutes next Tuesday, I’d love to show you how schools in your district are using this to boost student engagement. 
-
-Does morning or afternoon work better for you?
-
-Best,
-[Name]
-                </div>
-                <div class="strategy-note">
-                    <strong>Strategy:</strong> The Empathy Deep-Dive: When students read about characters like Demeter rescuing food, the empathy clicks instantly.
-                </div>
-            </div>
-
-            <div class="email-container" id="email-3">
-                <button class="copy-btn" onclick="copyEmail('email-3-text')">Copy Email</button>
-                <img src="assets/week_3.png" alt="Week 3 Hero" class="email-hero-image">
-                <div class="email-subject">Subject: The "School of Distinction" program</div>
-                <div class="email-body" id="email-3-text">
-Hi [First Name],
-
-I wanted to share a quick win from another school, Creekside Elementary. 
-
-They were struggling to get students excited about their environmental science unit. 
-
-They introduced our interactive curriculum, and within just five months, two classes of 4th and 5th graders piloted the program and successfully rescued 10,000 pounds of food, providing 9,100 meals to their community. 
-
-It’s completely turnkey. Teachers just press play on the animated audiobook, and the students do the rest. 
-
-Are you open to seeing how the leaderboard mechanics could work for [School Name]?
-
-Best,
-[Name]
-                </div>
-                <div class="strategy-note">
-                    <strong>Strategy:</strong> The 'Hero Mechanism': Provide a case study showing a massive win (10,000 pounds of food rescued) with minimal effort.
-                </div>
-            </div>
-
-            <div class="email-container" id="email-4">
-                <button class="copy-btn" onclick="copyEmail('email-4-text')">Copy Email</button>
-                <img src="assets/week_4.png" alt="Week 4 Hero" class="email-hero-image">
-                <div class="email-subject">Subject: Too much on the teachers' plates?</div>
-                <div class="email-body" id="email-4-text">
-Hi [First Name],
-
-Usually, when I speak with principals, their biggest hesitation with new programs is the dreaded "teacher burden." 
-
-I completely understand. If it requires weekend prep, teachers won't use it. 
-
-That’s exactly why the Hunger Action Heroes curriculum is 100% plug-and-play. It includes the comic books, the digital animated audiobooks, and video messages that kick off every activity automatically. 
-
-Is teacher workload the main thing holding you back from exploring new SEL resources this quarter? 
-
-Best,
-[Name]
-                </div>
-                <div class="strategy-note">
-                    <strong>Strategy:</strong> The Silent Objection: Tackle 'teacher burden' head on. Sabri Suby's strategy is to identify the biggest objection and dismantle it.
-                </div>
-            </div>
-
-            <div class="email-container" id="email-5">
-                <button class="copy-btn" onclick="copyEmail('email-5-text')">Copy Email</button>
-                <img src="assets/week_5.png" alt="Week 5 Hero" class="email-hero-image">
-                <div class="email-subject">Subject: Classroom Superhero kits for [School Name]</div>
-                <div class="email-body" id="email-5-text">
-Hi [First Name],
-
-We are currently allocating our "Classroom Superhero" kits for the upcoming semester, and I want to make sure [School Name] has the opportunity to participate. 
-
-The kit includes 40 comic books, the full curriculum guide, student handbooks, and certificates—everything needed to turn a classroom into real-world hunger heroes. 
-
-Plus, every dollar directly provides two meals and prevents two pounds of food waste, supporting critical hunger-relief programs. You’re empowering your students while directly feeding families in need. 
-
-We only have capacity to onboard 15 more schools in your district this month. 
-
-Can we schedule a brief 8-minute call this Thursday to secure your kits?
-
-Best,
-[Name]
-                </div>
-                <div class="strategy-note">
-                    <strong>Strategy:</strong> The Godfather Offer: A high-end product mockup of the 'Classroom Superhero Kit' glowing with a golden aura. Introduce scarcity.
-                </div>
-            </div>
-
-            <div class="email-container" id="email-6">
-                <button class="copy-btn" onclick="copyEmail('email-6-text')">Copy Email</button>
-                <img src="assets/week_6.png" alt="Week 6 Hero" class="email-hero-image">
-                <div class="email-subject">Subject: Closing the loop</div>
-                <div class="email-body" id="email-6-text">
-Hi [First Name],
-
-I haven't heard back, so I’m going to assume improving student engagement with turnkey SEL resources isn't a top priority for [School Name] right now. 
-
-I totally respect that, and I won't reach out again. 
-
-If things change and you want to see how the Hunger Action Heroes program can effortlessly integrate into your classrooms, you can always grab a time on my calendar here. 
-
-Wishing you and your staff a great rest of the semester. 
-
-Best,
-[Name]
-                </div>
-                <div class="strategy-note">
-                    <strong>Strategy:</strong> The Break-Up: 'Pull, don\'t push.' By taking the offer away, we trigger FOMO. This email historically gets the highest reply rate.
-                </div>
-            </div>
-
-        </div>
+        </ul>
     </div>
+
+    <div class="main-content">
+
+        <div id="week-1" class="email-section">
+            <div class="email-header">
+                <div class="subject-line">
+                    <strong>Subject:</strong> SEL engagement at [School Name]
+                </div>
+                <div class="action-buttons">
+                    <button class="btn" onclick="copyHTML(1)">Copy HTML Code</button>
+                </div>
+            </div>
+            
+            <div class="email-preview" id="email-content-1">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f0f0f0; padding: 40px 10px; font-family: Arial, sans-serif;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 4px solid #111111; border-radius: 8px; border-bottom: 8px solid #111111; border-right: 8px solid #111111; overflow: hidden; max-width: 600px; margin: 0 auto;">
+        <!-- Header Image -->
+        <tr>
+          <td align="center" style="background-color: #fff200; padding: 20px; border-bottom: 4px solid #111111;">
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_1.png" alt="Week 1 Asset" width="550" style="display: block; max-width: 100%; height: auto; border: 3px solid #111111; border-radius: 6px; box-sizing: border-box;" />
+          </td>
+        </tr>
+        <!-- Content -->
+        <tr>
+          <td style="padding: 40px 40px 20px 40px;">
+            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Hi [First Name],</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">I know you're constantly evaluating ways to keep students engaged with Social-Emotional Learning (SEL) without adding to your teachers' workload.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">We've put together a free, zero-prep activity sheet that uses superhero storytelling to teach students about community empathy and food waste.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">It takes exactly 5 minutes for a teacher to implement, and it aligns perfectly with national SEL standards.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Would you like me to send the PDF over for your teachers to try out?</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Best, 
+[Name]
+Director of Social Impact, Hunger Action Heroes Unite!</p>
+          </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+          <td style="padding: 0 40px 40px 40px; text-align: center;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+              <tr>
+                <td style="background-color: #ff3366; border: 3px solid #111111; border-bottom: 5px solid #111111; border-right: 5px solid #111111; border-radius: 4px; padding: 12px 24px;">
+                  <a href="https://hungeractionheroes.org" style="color: #ffffff; text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase;">Discover the Heroes</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+            </div>
+            
+            <textarea id="raw-html-1" style="display:none;"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f0f0f0; padding: 40px 10px; font-family: Arial, sans-serif;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 4px solid #111111; border-radius: 8px; border-bottom: 8px solid #111111; border-right: 8px solid #111111; overflow: hidden; max-width: 600px; margin: 0 auto;">
+        <!-- Header Image -->
+        <tr>
+          <td align="center" style="background-color: #fff200; padding: 20px; border-bottom: 4px solid #111111;">
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_1.png" alt="Week 1 Asset" width="550" style="display: block; max-width: 100%; height: auto; border: 3px solid #111111; border-radius: 6px; box-sizing: border-box;" />
+          </td>
+        </tr>
+        <!-- Content -->
+        <tr>
+          <td style="padding: 40px 40px 20px 40px;">
+            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Hi [First Name],</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">I know you're constantly evaluating ways to keep students engaged with Social-Emotional Learning (SEL) without adding to your teachers' workload.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">We've put together a free, zero-prep activity sheet that uses superhero storytelling to teach students about community empathy and food waste.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">It takes exactly 5 minutes for a teacher to implement, and it aligns perfectly with national SEL standards.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Would you like me to send the PDF over for your teachers to try out?</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Best, 
+[Name]
+Director of Social Impact, Hunger Action Heroes Unite!</p>
+          </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+          <td style="padding: 0 40px 40px 40px; text-align: center;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+              <tr>
+                <td style="background-color: #ff3366; border: 3px solid #111111; border-bottom: 5px solid #111111; border-right: 5px solid #111111; border-radius: 4px; padding: 12px 24px;">
+                  <a href="https://hungeractionheroes.org" style="color: #ffffff; text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase;">Discover the Heroes</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table></textarea>
+        </div>
+
+        <div id="week-2" class="email-section">
+            <div class="email-header">
+                <div class="subject-line">
+                    <strong>Subject:</strong> Quick question about your community initiatives
+                </div>
+                <div class="action-buttons">
+                    <button class="btn" onclick="copyHTML(2)">Copy HTML Code</button>
+                </div>
+            </div>
+            
+            <div class="email-preview" id="email-content-2">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f0f0f0; padding: 40px 10px; font-family: Arial, sans-serif;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 4px solid #111111; border-radius: 8px; border-bottom: 8px solid #111111; border-right: 8px solid #111111; overflow: hidden; max-width: 600px; margin: 0 auto;">
+        <!-- Header Image -->
+        <tr>
+          <td align="center" style="background-color: #fff200; padding: 20px; border-bottom: 4px solid #111111;">
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_2.png" alt="Week 2 Asset" width="550" style="display: block; max-width: 100%; height: auto; border: 3px solid #111111; border-radius: 6px; box-sizing: border-box;" />
+          </td>
+        </tr>
+        <!-- Content -->
+        <tr>
+          <td style="padding: 40px 40px 20px 40px;">
+            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Hi [First Name],</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Following up on the activity sheet—I’m curious, what is [School Name]’s primary focus this year for getting students involved in local community service?</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Most administrators tell us that getting middle schoolers to genuinely care about local issues—like the fact that 1 in 5 children face hunger while millions of pounds of food go to waste—is an uphill battle.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">That’s why we created a narrative-driven approach. When students read about characters like *Demeter* rescuing food, the empathy clicks instantly.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">If you have 10 minutes next Tuesday, I’d love to show you how schools in your district are using this to boost student engagement.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Does morning or afternoon work better for you?</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Best,
+[Name]</p>
+          </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+          <td style="padding: 0 40px 40px 40px; text-align: center;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+              <tr>
+                <td style="background-color: #ff3366; border: 3px solid #111111; border-bottom: 5px solid #111111; border-right: 5px solid #111111; border-radius: 4px; padding: 12px 24px;">
+                  <a href="https://hungeractionheroes.org" style="color: #ffffff; text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase;">Discover the Heroes</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+            </div>
+            
+            <textarea id="raw-html-2" style="display:none;"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f0f0f0; padding: 40px 10px; font-family: Arial, sans-serif;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 4px solid #111111; border-radius: 8px; border-bottom: 8px solid #111111; border-right: 8px solid #111111; overflow: hidden; max-width: 600px; margin: 0 auto;">
+        <!-- Header Image -->
+        <tr>
+          <td align="center" style="background-color: #fff200; padding: 20px; border-bottom: 4px solid #111111;">
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_2.png" alt="Week 2 Asset" width="550" style="display: block; max-width: 100%; height: auto; border: 3px solid #111111; border-radius: 6px; box-sizing: border-box;" />
+          </td>
+        </tr>
+        <!-- Content -->
+        <tr>
+          <td style="padding: 40px 40px 20px 40px;">
+            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Hi [First Name],</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Following up on the activity sheet—I’m curious, what is [School Name]’s primary focus this year for getting students involved in local community service?</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Most administrators tell us that getting middle schoolers to genuinely care about local issues—like the fact that 1 in 5 children face hunger while millions of pounds of food go to waste—is an uphill battle.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">That’s why we created a narrative-driven approach. When students read about characters like *Demeter* rescuing food, the empathy clicks instantly.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">If you have 10 minutes next Tuesday, I’d love to show you how schools in your district are using this to boost student engagement.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Does morning or afternoon work better for you?</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Best,
+[Name]</p>
+          </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+          <td style="padding: 0 40px 40px 40px; text-align: center;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+              <tr>
+                <td style="background-color: #ff3366; border: 3px solid #111111; border-bottom: 5px solid #111111; border-right: 5px solid #111111; border-radius: 4px; padding: 12px 24px;">
+                  <a href="https://hungeractionheroes.org" style="color: #ffffff; text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase;">Discover the Heroes</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table></textarea>
+        </div>
+
+        <div id="week-3" class="email-section">
+            <div class="email-header">
+                <div class="subject-line">
+                    <strong>Subject:</strong> The "School of Distinction" program
+                </div>
+                <div class="action-buttons">
+                    <button class="btn" onclick="copyHTML(3)">Copy HTML Code</button>
+                </div>
+            </div>
+            
+            <div class="email-preview" id="email-content-3">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f0f0f0; padding: 40px 10px; font-family: Arial, sans-serif;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 4px solid #111111; border-radius: 8px; border-bottom: 8px solid #111111; border-right: 8px solid #111111; overflow: hidden; max-width: 600px; margin: 0 auto;">
+        <!-- Header Image -->
+        <tr>
+          <td align="center" style="background-color: #fff200; padding: 20px; border-bottom: 4px solid #111111;">
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_3.png" alt="Week 3 Asset" width="550" style="display: block; max-width: 100%; height: auto; border: 3px solid #111111; border-radius: 6px; box-sizing: border-box;" />
+          </td>
+        </tr>
+        <!-- Content -->
+        <tr>
+          <td style="padding: 40px 40px 20px 40px;">
+            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Hi [First Name],</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">I wanted to share a quick win from another school, Creekside Elementary.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">They were struggling to get students excited about their environmental science unit.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">They introduced our interactive curriculum, and within just five months, two classes of 4th and 5th graders piloted the program and successfully rescued 10,000 pounds of food, providing 9,100 meals to their community.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">It’s completely turnkey. Teachers just press play on the animated audiobook, and the students do the rest.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Are you open to seeing how the leaderboard mechanics could work for [School Name]?</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Best,
+[Name]</p>
+          </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+          <td style="padding: 0 40px 40px 40px; text-align: center;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+              <tr>
+                <td style="background-color: #ff3366; border: 3px solid #111111; border-bottom: 5px solid #111111; border-right: 5px solid #111111; border-radius: 4px; padding: 12px 24px;">
+                  <a href="https://hungeractionheroes.org" style="color: #ffffff; text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase;">Discover the Heroes</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+            </div>
+            
+            <textarea id="raw-html-3" style="display:none;"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f0f0f0; padding: 40px 10px; font-family: Arial, sans-serif;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 4px solid #111111; border-radius: 8px; border-bottom: 8px solid #111111; border-right: 8px solid #111111; overflow: hidden; max-width: 600px; margin: 0 auto;">
+        <!-- Header Image -->
+        <tr>
+          <td align="center" style="background-color: #fff200; padding: 20px; border-bottom: 4px solid #111111;">
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_3.png" alt="Week 3 Asset" width="550" style="display: block; max-width: 100%; height: auto; border: 3px solid #111111; border-radius: 6px; box-sizing: border-box;" />
+          </td>
+        </tr>
+        <!-- Content -->
+        <tr>
+          <td style="padding: 40px 40px 20px 40px;">
+            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Hi [First Name],</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">I wanted to share a quick win from another school, Creekside Elementary.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">They were struggling to get students excited about their environmental science unit.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">They introduced our interactive curriculum, and within just five months, two classes of 4th and 5th graders piloted the program and successfully rescued 10,000 pounds of food, providing 9,100 meals to their community.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">It’s completely turnkey. Teachers just press play on the animated audiobook, and the students do the rest.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Are you open to seeing how the leaderboard mechanics could work for [School Name]?</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Best,
+[Name]</p>
+          </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+          <td style="padding: 0 40px 40px 40px; text-align: center;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+              <tr>
+                <td style="background-color: #ff3366; border: 3px solid #111111; border-bottom: 5px solid #111111; border-right: 5px solid #111111; border-radius: 4px; padding: 12px 24px;">
+                  <a href="https://hungeractionheroes.org" style="color: #ffffff; text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase;">Discover the Heroes</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table></textarea>
+        </div>
+
+        <div id="week-4" class="email-section">
+            <div class="email-header">
+                <div class="subject-line">
+                    <strong>Subject:</strong> Too much on the teachers' plates?
+                </div>
+                <div class="action-buttons">
+                    <button class="btn" onclick="copyHTML(4)">Copy HTML Code</button>
+                </div>
+            </div>
+            
+            <div class="email-preview" id="email-content-4">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f0f0f0; padding: 40px 10px; font-family: Arial, sans-serif;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 4px solid #111111; border-radius: 8px; border-bottom: 8px solid #111111; border-right: 8px solid #111111; overflow: hidden; max-width: 600px; margin: 0 auto;">
+        <!-- Header Image -->
+        <tr>
+          <td align="center" style="background-color: #fff200; padding: 20px; border-bottom: 4px solid #111111;">
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_4.png" alt="Week 4 Asset" width="550" style="display: block; max-width: 100%; height: auto; border: 3px solid #111111; border-radius: 6px; box-sizing: border-box;" />
+          </td>
+        </tr>
+        <!-- Content -->
+        <tr>
+          <td style="padding: 40px 40px 20px 40px;">
+            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Hi [First Name],</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Usually, when I speak with principals, their biggest hesitation with new programs is the dreaded "teacher burden."</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">I completely understand. If it requires weekend prep, teachers won't use it.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">That’s exactly why the Hunger Action Heroes curriculum is 100% plug-and-play. It includes the comic books, the digital animated audiobooks, and video messages that kick off every activity automatically.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Is teacher workload the main thing holding you back from exploring new SEL resources this quarter?</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Best,
+[Name]</p>
+          </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+          <td style="padding: 0 40px 40px 40px; text-align: center;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+              <tr>
+                <td style="background-color: #ff3366; border: 3px solid #111111; border-bottom: 5px solid #111111; border-right: 5px solid #111111; border-radius: 4px; padding: 12px 24px;">
+                  <a href="https://hungeractionheroes.org" style="color: #ffffff; text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase;">Discover the Heroes</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+            </div>
+            
+            <textarea id="raw-html-4" style="display:none;"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f0f0f0; padding: 40px 10px; font-family: Arial, sans-serif;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 4px solid #111111; border-radius: 8px; border-bottom: 8px solid #111111; border-right: 8px solid #111111; overflow: hidden; max-width: 600px; margin: 0 auto;">
+        <!-- Header Image -->
+        <tr>
+          <td align="center" style="background-color: #fff200; padding: 20px; border-bottom: 4px solid #111111;">
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_4.png" alt="Week 4 Asset" width="550" style="display: block; max-width: 100%; height: auto; border: 3px solid #111111; border-radius: 6px; box-sizing: border-box;" />
+          </td>
+        </tr>
+        <!-- Content -->
+        <tr>
+          <td style="padding: 40px 40px 20px 40px;">
+            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Hi [First Name],</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Usually, when I speak with principals, their biggest hesitation with new programs is the dreaded "teacher burden."</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">I completely understand. If it requires weekend prep, teachers won't use it.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">That’s exactly why the Hunger Action Heroes curriculum is 100% plug-and-play. It includes the comic books, the digital animated audiobooks, and video messages that kick off every activity automatically.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Is teacher workload the main thing holding you back from exploring new SEL resources this quarter?</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Best,
+[Name]</p>
+          </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+          <td style="padding: 0 40px 40px 40px; text-align: center;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+              <tr>
+                <td style="background-color: #ff3366; border: 3px solid #111111; border-bottom: 5px solid #111111; border-right: 5px solid #111111; border-radius: 4px; padding: 12px 24px;">
+                  <a href="https://hungeractionheroes.org" style="color: #ffffff; text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase;">Discover the Heroes</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table></textarea>
+        </div>
+
+        <div id="week-5" class="email-section">
+            <div class="email-header">
+                <div class="subject-line">
+                    <strong>Subject:</strong> Classroom Superhero kits for [School Name]
+                </div>
+                <div class="action-buttons">
+                    <button class="btn" onclick="copyHTML(5)">Copy HTML Code</button>
+                </div>
+            </div>
+            
+            <div class="email-preview" id="email-content-5">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f0f0f0; padding: 40px 10px; font-family: Arial, sans-serif;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 4px solid #111111; border-radius: 8px; border-bottom: 8px solid #111111; border-right: 8px solid #111111; overflow: hidden; max-width: 600px; margin: 0 auto;">
+        <!-- Header Image -->
+        <tr>
+          <td align="center" style="background-color: #fff200; padding: 20px; border-bottom: 4px solid #111111;">
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_5.png" alt="Week 5 Asset" width="550" style="display: block; max-width: 100%; height: auto; border: 3px solid #111111; border-radius: 6px; box-sizing: border-box;" />
+          </td>
+        </tr>
+        <!-- Content -->
+        <tr>
+          <td style="padding: 40px 40px 20px 40px;">
+            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Hi [First Name],</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">We are currently allocating our "Classroom Superhero" kits for the upcoming semester, and I want to make sure [School Name] has the opportunity to participate.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">The kit includes 40 comic books, the full curriculum guide, student handbooks, and certificates—everything needed to turn a classroom into real-world hunger heroes.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Plus, every dollar directly provides two meals and prevents two pounds of food waste, supporting critical hunger-relief programs. You’re empowering your students while directly feeding families in need.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">We only have capacity to onboard 15 more schools in your district this month.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Can we schedule a brief 8-minute call this Thursday to secure your kits?</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Best,
+[Name]</p>
+          </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+          <td style="padding: 0 40px 40px 40px; text-align: center;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+              <tr>
+                <td style="background-color: #ff3366; border: 3px solid #111111; border-bottom: 5px solid #111111; border-right: 5px solid #111111; border-radius: 4px; padding: 12px 24px;">
+                  <a href="https://hungeractionheroes.org" style="color: #ffffff; text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase;">Discover the Heroes</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+            </div>
+            
+            <textarea id="raw-html-5" style="display:none;"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f0f0f0; padding: 40px 10px; font-family: Arial, sans-serif;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 4px solid #111111; border-radius: 8px; border-bottom: 8px solid #111111; border-right: 8px solid #111111; overflow: hidden; max-width: 600px; margin: 0 auto;">
+        <!-- Header Image -->
+        <tr>
+          <td align="center" style="background-color: #fff200; padding: 20px; border-bottom: 4px solid #111111;">
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_5.png" alt="Week 5 Asset" width="550" style="display: block; max-width: 100%; height: auto; border: 3px solid #111111; border-radius: 6px; box-sizing: border-box;" />
+          </td>
+        </tr>
+        <!-- Content -->
+        <tr>
+          <td style="padding: 40px 40px 20px 40px;">
+            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Hi [First Name],</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">We are currently allocating our "Classroom Superhero" kits for the upcoming semester, and I want to make sure [School Name] has the opportunity to participate.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">The kit includes 40 comic books, the full curriculum guide, student handbooks, and certificates—everything needed to turn a classroom into real-world hunger heroes.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Plus, every dollar directly provides two meals and prevents two pounds of food waste, supporting critical hunger-relief programs. You’re empowering your students while directly feeding families in need.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">We only have capacity to onboard 15 more schools in your district this month.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Can we schedule a brief 8-minute call this Thursday to secure your kits?</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Best,
+[Name]</p>
+          </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+          <td style="padding: 0 40px 40px 40px; text-align: center;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+              <tr>
+                <td style="background-color: #ff3366; border: 3px solid #111111; border-bottom: 5px solid #111111; border-right: 5px solid #111111; border-radius: 4px; padding: 12px 24px;">
+                  <a href="https://hungeractionheroes.org" style="color: #ffffff; text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase;">Discover the Heroes</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table></textarea>
+        </div>
+
+        <div id="week-6" class="email-section">
+            <div class="email-header">
+                <div class="subject-line">
+                    <strong>Subject:</strong> Closing the loop
+                </div>
+                <div class="action-buttons">
+                    <button class="btn" onclick="copyHTML(6)">Copy HTML Code</button>
+                </div>
+            </div>
+            
+            <div class="email-preview" id="email-content-6">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f0f0f0; padding: 40px 10px; font-family: Arial, sans-serif;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 4px solid #111111; border-radius: 8px; border-bottom: 8px solid #111111; border-right: 8px solid #111111; overflow: hidden; max-width: 600px; margin: 0 auto;">
+        <!-- Header Image -->
+        <tr>
+          <td align="center" style="background-color: #fff200; padding: 20px; border-bottom: 4px solid #111111;">
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_6.png" alt="Week 6 Asset" width="550" style="display: block; max-width: 100%; height: auto; border: 3px solid #111111; border-radius: 6px; box-sizing: border-box;" />
+          </td>
+        </tr>
+        <!-- Content -->
+        <tr>
+          <td style="padding: 40px 40px 20px 40px;">
+            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Hi [First Name],</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">I haven't heard back, so I’m going to assume improving student engagement with turnkey SEL resources isn't a top priority for [School Name] right now.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">I totally respect that, and I won't reach out again.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">If things change and you want to see how the Hunger Action Heroes program can effortlessly integrate into your classrooms, you can always grab a time on my calendar here.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Wishing you and your staff a great rest of the semester.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Best,
+[Name]</p>
+          </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+          <td style="padding: 0 40px 40px 40px; text-align: center;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+              <tr>
+                <td style="background-color: #ff3366; border: 3px solid #111111; border-bottom: 5px solid #111111; border-right: 5px solid #111111; border-radius: 4px; padding: 12px 24px;">
+                  <a href="https://hungeractionheroes.org" style="color: #ffffff; text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase;">Discover the Heroes</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+            </div>
+            
+            <textarea id="raw-html-6" style="display:none;"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f0f0f0; padding: 40px 10px; font-family: Arial, sans-serif;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 4px solid #111111; border-radius: 8px; border-bottom: 8px solid #111111; border-right: 8px solid #111111; overflow: hidden; max-width: 600px; margin: 0 auto;">
+        <!-- Header Image -->
+        <tr>
+          <td align="center" style="background-color: #fff200; padding: 20px; border-bottom: 4px solid #111111;">
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_6.png" alt="Week 6 Asset" width="550" style="display: block; max-width: 100%; height: auto; border: 3px solid #111111; border-radius: 6px; box-sizing: border-box;" />
+          </td>
+        </tr>
+        <!-- Content -->
+        <tr>
+          <td style="padding: 40px 40px 20px 40px;">
+            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Hi [First Name],</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">I haven't heard back, so I’m going to assume improving student engagement with turnkey SEL resources isn't a top priority for [School Name] right now.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">I totally respect that, and I won't reach out again.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">If things change and you want to see how the Hunger Action Heroes program can effortlessly integrate into your classrooms, you can always grab a time on my calendar here.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Wishing you and your staff a great rest of the semester.</p>
+<p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #111111; line-height: 1.6;">Best,
+[Name]</p>
+          </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+          <td style="padding: 0 40px 40px 40px; text-align: center;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+              <tr>
+                <td style="background-color: #ff3366; border: 3px solid #111111; border-bottom: 5px solid #111111; border-right: 5px solid #111111; border-radius: 4px; padding: 12px 24px;">
+                  <a href="https://hungeractionheroes.org" style="color: #ffffff; text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase;">Discover the Heroes</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table></textarea>
+        </div>
+
+    </div>
+    
+    <div class="toast" id="toast">Copied to clipboard! BOOM! ??</div>
+
     <script>
-        function showEmail(num) {
-            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            document.querySelectorAll('.email-container').forEach(container => {
-                container.classList.remove('active');
+        function showEmail(weekNumber, linkElement) {
+            // Hide all emails
+            document.querySelectorAll('.email-section').forEach(el => {
+                el.classList.remove('active');
             });
-            document.getElementById(email-).classList.add('active');
+            
+            // Remove active class from all links
+            document.querySelectorAll('.nav-links a').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Show selected email
+            document.getElementById('week-' + weekNumber).classList.add('active');
+            
+            // Set active link
+            if (linkElement) {
+                linkElement.classList.add('active');
+            } else {
+                document.querySelector(.nav-links a[href="#week-"]).classList.add('active');
+            }
+            
+            window.scrollTo(0, 0);
         }
 
-        function copyEmail(elementId) {
-            const text = document.getElementById(elementId).innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                const btn = event.target;
-                const originalText = btn.innerText;
-                btn.innerText = "Copied!";
-                btn.style.background = "#3B9E3A";
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.style.background = "";
-                }, 1500);
+        function copyHTML(weekNumber) {
+            const rawHtml = document.getElementById('raw-html-' + weekNumber).value;
+            navigator.clipboard.writeText(rawHtml).then(() => {
+                showToast('HTML Code copied! Ready for Klaviyo! ??');
             });
         }
+        
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Initialize first view
+        document.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash;
+            if (hash && hash.startsWith('#week-')) {
+                const week = hash.replace('#week-', '');
+                showEmail(week, document.querySelector(.nav-links a[href=""]));
+            } else {
+                showEmail(1, document.querySelector('.nav-links a'));
+            }
+        });
     </script>
 </body>
 </html>
