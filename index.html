@@ -1,136 +1,346 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="x-apple-disable-message-reformatting">
-    <title>HAHU Agency - AI Solutions for Schools</title>
-    <!--[if mso]>
-    <xml>
-        <o:OfficeDocumentSettings>
-            <o:PixelsPerInch>96</o:PixelsPerInch>
-        </o:OfficeDocumentSettings>
-    </xml>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunger Action Heroes - 6-Week Sequence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        table {border-collapse:collapse;}
-        td,th,div,p,a,h1,h2,h3,h4,h5,h6 {font-family: "Segoe UI", Arial, sans-serif; mso-line-height-rule: exactly;}
-    </style>
-    <![endif]-->
-    <style>
-        body, p, h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; }
-        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important; }
-        img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
-        p { display: block; margin: 13px 0; }
-        body { background-color: #0d1117; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
-        
-        /* Klaviyo specifics */
-        .klaviyo-form, .klaviyo-block { display: block !important; }
+        :root {
+            --comic-red: #D22B48;
+            --comic-blue: #1C658C;
+            --comic-yellow: #FFB800;
+            --comic-black: #111111;
+            --comic-green: #3B9E3A;
+            --comic-border: 4px solid var(--comic-black);
+            --bg-pattern: radial-gradient(circle, #000000 2px, transparent 2px);
+        }
 
-        .container { max-width: 600px; margin: 0 auto; width: 100%; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
-        .hero { background-color: #1a1a2e; padding: 40px 20px; text-align: center; color: #ffffff; }
-        .hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 15px; letter-spacing: -0.5px; }
-        .hero p { font-size: 16px; font-weight: 400; line-height: 1.5; color: #a0aec0; margin-bottom: 25px; }
-        .btn { display: inline-block; background-color: #4263eb; color: #ffffff !important; font-size: 16px; font-weight: 600; text-decoration: none; padding: 14px 28px; border-radius: 6px; }
-        
-        .content { padding: 40px 30px; background-color: #ffffff; color: #333333; }
-        .content h2 { font-size: 22px; font-weight: 700; margin-bottom: 20px; color: #1a202c; }
-        .content p { font-size: 16px; line-height: 1.6; margin-bottom: 20px; color: #4a5568; }
-        
-        .highlight-box { background-color: #f7fafc; border-left: 4px solid #4263eb; padding: 20px; margin-bottom: 25px; border-radius: 0 8px 8px 0; }
-        .highlight-box p { margin: 0; color: #2d3748; font-weight: 500; }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f4f4;
+            background-image: var(--bg-pattern);
+            background-size: 20px 20px;
+            background-position: 0 0;
+            background-attachment: fixed;
+            color: var(--comic-black);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-        .footer { background-color: #0d1117; padding: 30px 20px; text-align: center; color: #718096; font-size: 13px; }
-        .footer a { color: #a0aec0; text-decoration: underline; }
+        .portal-container {
+            width: 100%;
+            max-width: 1100px;
+            background: white;
+            border: var(--comic-border);
+            box-shadow: 12px 12px 0px var(--comic-black);
+            display: flex;
+            margin: 40px 20px;
+        }
 
-        /* Mobile Optimization */
-        @media screen and (max-width: 600px) {
-            .container { width: 100% !important; border-radius: 0 !important; }
-            .content { padding: 30px 20px !important; }
-            .hero { padding: 35px 15px !important; }
-            .hero h1 { font-size: 24px !important; }
-            .btn { display: block !important; width: 100% !important; box-sizing: border-box; text-align: center; }
+        .sidebar {
+            width: 300px;
+            background: var(--comic-red);
+            padding: 2rem;
+            color: white;
+            border-right: var(--comic-border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar h1 {
+            font-family: 'Bangers', cursive;
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-top: 0;
+            text-shadow: 3px 3px 0px var(--comic-black);
+            letter-spacing: 2px;
+        }
+
+        .nav-btn {
+            background: white;
+            color: var(--comic-black);
+            border: 2px solid var(--comic-black);
+            padding: 15px;
+            margin-bottom: 15px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s ease;
+            border-radius: 4px;
+            box-shadow: 4px 4px 0px var(--comic-black);
+        }
+
+        .nav-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--comic-black);
+        }
+
+        .nav-btn.active {
+            background: var(--comic-yellow);
+        }
+
+        .email-display {
+            flex-grow: 1;
+            padding: 3rem;
+            background: white;
+            position: relative;
+        }
+
+        .email-container {
+            display: none;
+        }
+
+        .email-container.active {
+            display: block;
+        }
+
+        .email-subject {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px dashed #ccc;
+        }
+
+        .email-body {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        .email-hero-image {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: contain;
+            border: 3px solid var(--comic-black);
+            border-radius: 8px;
+            clear: both;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 4px 4px 0px var(--comic-black);
+            transition: transform 0.2s ease;
+        }
+
+        .email-hero-image:hover {
+            transform: scale(1.01);
+        }
+
+        .copy-btn {
+            float: right;
+            margin-bottom: 1rem;
+            background: var(--comic-blue);
+            color: white;
+            border: 2px solid var(--comic-black);
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            box-shadow: 2px 2px 0px var(--comic-black);
+            transition: all 0.1s ease;
+        }
+
+        .strategy-note {
+            background-color: #E8F4FA;
+            border: 2px solid var(--comic-blue);
+            padding: 1.5rem;
+            margin-top: 3rem;
+            border-radius: 8px;
+            font-style: italic;
         }
     </style>
 </head>
-<body style="margin:0;padding:0;word-spacing:normal;background-color:#0d1117;">
-    <div role="article" aria-roledescription="email" lang="en" style="text-size-adjust:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:#0d1117;padding-top:40px;padding-bottom:40px;">
-        
-        <!-- Main Table Container -->
-        <table role="presentation" style="width:100%;border:none;border-spacing:0;background-color:#0d1117;">
-            <tr>
-                <td align="center" style="padding:0;">
-                    
-                    <!-- 600px Wrapper -->
-                    <table class="container" role="presentation" style="max-width:600px;width:100%;border:none;border-spacing:0;background-color:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.2);">
-                        
-                        <!-- Hero Section -->
-                        <tr>
-                            <td class="hero" style="background-color:#1a1a2e;padding:40px 20px;text-align:center;color:#ffffff;">
-                                <h1 style="margin:0;font-size:28px;font-weight:800;letter-spacing:-0.5px;">Supercharge {{ organization.name|default:'Your School' }} with AI</h1>
-                                <p style="margin:15px 0 25px 0;font-size:16px;line-height:1.5;color:#a0aec0;">Equipping modern principals with intelligent automation to save 15+ hours a week.</p>
-                                
-                                <table role="presentation" style="margin:0 auto;border:none;border-spacing:0;">
-                                    <tr>
-                                        <td style="border-radius:6px;background-color:#4263eb;text-align:center;">
-                                            <a href="{{ client.website|default:'#' }}" class="btn" style="background-color:#4263eb;color:#ffffff;font-size:16px;font-weight:600;text-decoration:none;padding:14px 28px;border-radius:6px;display:inline-block;">See How It Works</a>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
+<body>
+    <div class="portal-container">
+        <div class="sidebar">
+            <h1>HAHU<br>AGENCY<br>PITCH</h1>
+            <button class="nav-btn active" onclick="showEmail(1)">Week 1: The HVCO</button>
+            <button class="nav-btn" onclick="showEmail(2)">Week 2: Empathy Deep-Dive</button>
+            <button class="nav-btn" onclick="showEmail(3)">Week 3: The Mechanism</button>
+            <button class="nav-btn" onclick="showEmail(4)">Week 4: Silent Objection</button>
+            <button class="nav-btn" onclick="showEmail(5)">Week 5: Godfather Offer</button>
+            <button class="nav-btn" onclick="showEmail(6)">Week 6: The Break-Up</button>
+        </div>
+        <div class="email-display">
 
-                        <!-- Content Section -->
-                        <tr>
-                            <td class="content" style="padding:40px 30px;background-color:#ffffff;color:#333333;text-align:left;">
-                                <h2 style="margin:0 0 20px 0;font-size:22px;font-weight:700;color:#1a202c;">Hi {{ first_name|default:'Principal' }},</h2>
-                                
-                                <p style="margin:0 0 20px 0;font-size:16px;line-height:1.6;color:#4a5568;">
-                                    As the leader of {{ organization.name|default:'your school' }}, your time is your most valuable asset. The HAHU Agency specializes in bringing state-of-the-art AI infrastructure to K-12 education, allowing administrators to focus on what matters most: students.
-                                </p>
-                                
-                                <div class="highlight-box" style="background-color:#f7fafc;border-left:4px solid #4263eb;padding:20px;margin-bottom:25px;border-radius:0 8px 8px 0;">
-                                    <p style="margin:0;color:#2d3748;font-weight:500;">
-                                        "Automating our scheduling and communications freed up 20% of our administrative bandwidth in the first month."
-                                    </p>
-                                </div>
-                                
-                                <p style="margin:0 0 20px 0;font-size:16px;line-height:1.6;color:#4a5568;">
-                                    Whether you're in {{ location.city|default:'your city' }} or elsewhere in {{ location.state|default:'your state' }}, our tailored solutions integrate seamlessly with your existing tech stack.
-                                </p>
+            <div class="email-container active" id="email-1">
+                <button class="copy-btn" onclick="copyEmail('email-1-text')">Copy Email</button>
+                <img src="assets/week_1.png" alt="Week 1 Hero" class="email-hero-image">
+                <div class="email-subject">Subject: SEL engagement at [School Name]</div>
+                <div class="email-body" id="email-1-text">
+Hi [First Name],
 
-                                <table role="presentation" style="width:100%;border:none;border-spacing:0;">
-                                    <tr>
-                                        <td style="padding-top:20px;padding-bottom:10px;">
-                                            <table role="presentation" style="border:none;border-spacing:0;">
-                                                <tr>
-                                                    <td style="border-radius:6px;background-color:#1a202c;text-align:center;">
-                                                        <a href="{{ client.calendar_link|default:'#' }}" style="background-color:#1a202c;color:#ffffff;font-size:16px;font-weight:600;text-decoration:none;padding:12px 24px;border-radius:6px;display:inline-block;">Book a 15-Min Discovery Call</a>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
+I know you're constantly evaluating ways to keep students engaged with Social-Emotional Learning (SEL) without adding to your teachers' workload. 
 
-                        <!-- Footer Section -->
-                        <tr>
-                            <td class="footer" style="background-color:#0d1117;padding:30px 20px;text-align:center;color:#718096;font-size:13px;">
-                                <p style="margin:0 0 10px 0;">&copy; {% current_year %} HAHU Agency. All rights reserved.</p>
-                                <p style="margin:0;">
-                                    <a href="{% manage_preferences %}" style="color:#a0aec0;text-decoration:underline;">Manage Preferences</a> | 
-                                    <a href="{% unsubscribe %}" style="color:#a0aec0;text-decoration:underline;">Unsubscribe</a>
-                                </p>
-                            </td>
-                        </tr>
+We've put together a free, zero-prep activity sheet that uses superhero storytelling to teach students about community empathy and food waste. 
 
-                    </table>
-                    
-                </td>
-            </tr>
-        </table>
+It takes exactly 5 minutes for a teacher to implement, and it aligns perfectly with national SEL standards. 
+
+Would you like me to send the PDF over for your teachers to try out? 
+
+Best, 
+[Name]
+Director of Social Impact, Hunger Action Heroes Unite!
+                </div>
+                <div class="strategy-note">
+                    <strong>Strategy:</strong> The HVCO & Halo Strategy: We provide High-Value Content Offers (e.g., free SEL lesson plans) to capture the 97% of the market not ready to buy today.
+                </div>
+            </div>
+
+            <div class="email-container" id="email-2">
+                <button class="copy-btn" onclick="copyEmail('email-2-text')">Copy Email</button>
+                <img src="assets/week_2.png" alt="Week 2 Hero" class="email-hero-image">
+                <div class="email-subject">Subject: Quick question about your community initiatives</div>
+                <div class="email-body" id="email-2-text">
+Hi [First Name],
+
+Following up on the activity sheet—I’m curious, what is [School Name]’s primary focus this year for getting students involved in local community service? 
+
+Most administrators tell us that getting middle schoolers to genuinely care about local issues—like the fact that 1 in 5 children face hunger while millions of pounds of food go to waste—is an uphill battle. 
+
+That’s why we created a narrative-driven approach. When students read about characters like *Demeter* rescuing food, the empathy clicks instantly. 
+
+If you have 10 minutes next Tuesday, I’d love to show you how schools in your district are using this to boost student engagement. 
+
+Does morning or afternoon work better for you?
+
+Best,
+[Name]
+                </div>
+                <div class="strategy-note">
+                    <strong>Strategy:</strong> The Empathy Deep-Dive: When students read about characters like Demeter rescuing food, the empathy clicks instantly.
+                </div>
+            </div>
+
+            <div class="email-container" id="email-3">
+                <button class="copy-btn" onclick="copyEmail('email-3-text')">Copy Email</button>
+                <img src="assets/week_3.png" alt="Week 3 Hero" class="email-hero-image">
+                <div class="email-subject">Subject: The "School of Distinction" program</div>
+                <div class="email-body" id="email-3-text">
+Hi [First Name],
+
+I wanted to share a quick win from another school, Creekside Elementary. 
+
+They were struggling to get students excited about their environmental science unit. 
+
+They introduced our interactive curriculum, and within just five months, two classes of 4th and 5th graders piloted the program and successfully rescued 10,000 pounds of food, providing 9,100 meals to their community. 
+
+It’s completely turnkey. Teachers just press play on the animated audiobook, and the students do the rest. 
+
+Are you open to seeing how the leaderboard mechanics could work for [School Name]?
+
+Best,
+[Name]
+                </div>
+                <div class="strategy-note">
+                    <strong>Strategy:</strong> The 'Hero Mechanism': Provide a case study showing a massive win (10,000 pounds of food rescued) with minimal effort.
+                </div>
+            </div>
+
+            <div class="email-container" id="email-4">
+                <button class="copy-btn" onclick="copyEmail('email-4-text')">Copy Email</button>
+                <img src="assets/week_4.png" alt="Week 4 Hero" class="email-hero-image">
+                <div class="email-subject">Subject: Too much on the teachers' plates?</div>
+                <div class="email-body" id="email-4-text">
+Hi [First Name],
+
+Usually, when I speak with principals, their biggest hesitation with new programs is the dreaded "teacher burden." 
+
+I completely understand. If it requires weekend prep, teachers won't use it. 
+
+That’s exactly why the Hunger Action Heroes curriculum is 100% plug-and-play. It includes the comic books, the digital animated audiobooks, and video messages that kick off every activity automatically. 
+
+Is teacher workload the main thing holding you back from exploring new SEL resources this quarter? 
+
+Best,
+[Name]
+                </div>
+                <div class="strategy-note">
+                    <strong>Strategy:</strong> The Silent Objection: Tackle 'teacher burden' head on. Sabri Suby's strategy is to identify the biggest objection and dismantle it.
+                </div>
+            </div>
+
+            <div class="email-container" id="email-5">
+                <button class="copy-btn" onclick="copyEmail('email-5-text')">Copy Email</button>
+                <img src="assets/week_5.png" alt="Week 5 Hero" class="email-hero-image">
+                <div class="email-subject">Subject: Classroom Superhero kits for [School Name]</div>
+                <div class="email-body" id="email-5-text">
+Hi [First Name],
+
+We are currently allocating our "Classroom Superhero" kits for the upcoming semester, and I want to make sure [School Name] has the opportunity to participate. 
+
+The kit includes 40 comic books, the full curriculum guide, student handbooks, and certificates—everything needed to turn a classroom into real-world hunger heroes. 
+
+Plus, every dollar directly provides two meals and prevents two pounds of food waste, supporting critical hunger-relief programs. You’re empowering your students while directly feeding families in need. 
+
+We only have capacity to onboard 15 more schools in your district this month. 
+
+Can we schedule a brief 8-minute call this Thursday to secure your kits?
+
+Best,
+[Name]
+                </div>
+                <div class="strategy-note">
+                    <strong>Strategy:</strong> The Godfather Offer: A high-end product mockup of the 'Classroom Superhero Kit' glowing with a golden aura. Introduce scarcity.
+                </div>
+            </div>
+
+            <div class="email-container" id="email-6">
+                <button class="copy-btn" onclick="copyEmail('email-6-text')">Copy Email</button>
+                <img src="assets/week_6.png" alt="Week 6 Hero" class="email-hero-image">
+                <div class="email-subject">Subject: Closing the loop</div>
+                <div class="email-body" id="email-6-text">
+Hi [First Name],
+
+I haven't heard back, so I’m going to assume improving student engagement with turnkey SEL resources isn't a top priority for [School Name] right now. 
+
+I totally respect that, and I won't reach out again. 
+
+If things change and you want to see how the Hunger Action Heroes program can effortlessly integrate into your classrooms, you can always grab a time on my calendar here. 
+
+Wishing you and your staff a great rest of the semester. 
+
+Best,
+[Name]
+                </div>
+                <div class="strategy-note">
+                    <strong>Strategy:</strong> The Break-Up: 'Pull, don\'t push.' By taking the offer away, we trigger FOMO. This email historically gets the highest reply rate.
+                </div>
+            </div>
+
+        </div>
     </div>
+    <script>
+        function showEmail(num) {
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            document.querySelectorAll('.email-container').forEach(container => {
+                container.classList.remove('active');
+            });
+            document.getElementById(email-).classList.add('active');
+        }
+
+        function copyEmail(elementId) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.target;
+                const originalText = btn.innerText;
+                btn.innerText = "Copied!";
+                btn.style.background = "#3B9E3A";
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.background = "";
+                }, 1500);
+            });
+        }
+    </script>
 </body>
 </html>
