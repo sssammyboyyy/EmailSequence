@@ -16,7 +16,6 @@
             --brand-purple: #c084fc;
             --brand-black: #1e293b;
             --brand-white: #ffffff;
-            --brand-bg: #fdfbf7;
             --brand-gray: #f1f5f9;
         }
 
@@ -24,11 +23,20 @@
             margin: 0;
             padding: 0;
             font-family: 'Inter', sans-serif;
-            background-color: var(--brand-bg);
             color: var(--brand-black);
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            /* Multi-dimensional captivating background */
+            background: linear-gradient(-45deg, #fdfbf7, #fde047, #fb7185, #c084fc, #7dd3fc);
+            background-size: 400% 400%;
+            animation: gradientBG 20s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* Responsive Layout */
@@ -41,7 +49,7 @@
                 height: 100vh;
                 position: fixed;
                 overflow-y: auto;
-                border-right: 3px solid var(--brand-black);
+                border-right: 2px solid rgba(255, 255, 255, 0.8);
             }
             .main-content {
                 margin-left: 320px;
@@ -56,7 +64,7 @@
                 position: sticky;
                 top: 0;
                 height: auto;
-                border-bottom: 3px solid var(--brand-black);
+                border-bottom: 2px solid rgba(255, 255, 255, 0.8);
                 display: flex;
                 flex-direction: column;
                 z-index: 100;
@@ -108,34 +116,36 @@
 
         /* Scrollbar Styling */
         ::-webkit-scrollbar {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: var(--brand-white);
-            border-left: 2px solid var(--brand-black);
+            background: rgba(255,255,255,0.2);
         }
         ::-webkit-scrollbar-thumb {
-            background: var(--brand-blue);
-            border: 2px solid var(--brand-black);
-            border-radius: 5px;
+            background: rgba(30, 41, 59, 0.3);
+            border-radius: 4px;
         }
 
         .sidebar {
-            background-color: var(--brand-white);
+            /* Glassmorphism */
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
             padding: 30px;
             box-sizing: border-box;
-            box-shadow: 4px 0 15px rgba(0,0,0,0.03);
+            box-shadow: 4px 0 24px rgba(0,0,0,0.05);
         }
 
         .logo-container {
             margin-bottom: 40px;
             text-align: center;
+            perspective: 1000px;
         }
 
         .sidebar h1 {
             font-family: 'Bangers', cursive;
-            font-size: 42px;
+            font-size: 46px;
             letter-spacing: 1px;
             color: var(--brand-white);
             background: var(--brand-purple);
@@ -145,6 +155,11 @@
             transform: rotate(-2deg);
             margin: 0;
             display: inline-block;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .sidebar h1:hover {
+            transform: rotate(0deg) scale(1.05) translateZ(20px);
         }
 
         .sidebar p.subtitle {
@@ -172,22 +187,25 @@
             margin-bottom: 15px;
         }
 
+        /* Glassy Nav Links */
         .nav-links a {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 14px 20px;
-            background-color: var(--brand-white);
+            background: rgba(255, 255, 255, 0.65);
             color: var(--brand-black);
             text-decoration: none;
             font-weight: 800;
             font-size: 15px;
-            border: 3px solid var(--brand-black);
-            border-radius: 10px;
-            box-shadow: 4px 4px 0 var(--brand-black);
-            transition: all 0.2s ease;
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .nav-links a::after {
@@ -196,13 +214,14 @@
             font-size: 20px;
             opacity: 0;
             transform: translateX(-10px);
-            transition: all 0.2s;
+            transition: all 0.3s;
         }
 
         .nav-links a:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0 var(--brand-black);
-            background-color: var(--brand-gray);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            border-color: var(--brand-white);
         }
 
         .nav-links a:hover::after {
@@ -211,10 +230,11 @@
         }
 
         .nav-links a.active {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0 var(--brand-black);
-            background-color: var(--brand-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(125, 211, 252, 0.4);
+            background: var(--brand-blue);
             color: var(--brand-black);
+            border-color: var(--brand-blue);
         }
 
         .main-content {
@@ -225,32 +245,35 @@
             align-items: flex-start;
         }
 
+        /* Glassmorphism Email Container */
         .email-section {
             display: none;
             width: 100%;
             max-width: 800px;
-            background: var(--brand-white);
-            border: 3px solid var(--brand-black);
-            box-shadow: 8px 8px 0 var(--brand-black);
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+            border-radius: 16px;
             overflow: hidden;
             position: relative;
         }
 
         .email-section.active {
             display: block;
-            animation: fadeIn 0.3s ease;
+            animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        @keyframes fadeIn {
-            0% { transform: translateY(10px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+        @keyframes slideUp {
+            0% { transform: translateY(30px) scale(0.98); opacity: 0; }
+            100% { transform: translateY(0) scale(1); opacity: 1; }
         }
 
         .email-header {
-            background: var(--brand-gray);
-            padding: 20px;
-            border-bottom: 3px solid var(--brand-black);
+            background: rgba(241, 245, 249, 0.7);
+            padding: 24px 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.9);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -281,6 +304,12 @@
             border-radius: 6px;
             display: inline-block;
             box-shadow: 2px 2px 0 var(--brand-black);
+            transition: transform 0.2s;
+        }
+        
+        .subject-line:hover {
+            transform: translate(-1px, -1px);
+            box-shadow: 3px 3px 0 var(--brand-black);
         }
 
         .action-buttons {
@@ -293,29 +322,45 @@
             color: var(--brand-white);
             border: 3px solid var(--brand-black);
             border-radius: 8px;
-            padding: 12px 20px;
+            padding: 12px 24px;
             font-family: 'Bangers', cursive;
-            font-size: 20px;
+            font-size: 22px;
             letter-spacing: 1px;
             cursor: pointer;
             box-shadow: 4px 4px 0 var(--brand-black);
-            transition: all 0.15s ease;
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 50%; height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 200%;
         }
 
         .btn:hover {
-            transform: translate(-1px, -1px);
-            box-shadow: 5px 5px 0 var(--brand-black);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 6px 8px 0 var(--brand-black);
             background-color: #f43f5e;
         }
 
         .btn:active {
-            transform: translate(3px, 3px);
-            box-shadow: 1px 1px 0 var(--brand-black);
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--brand-black);
         }
 
         .email-preview {
-            padding: 0;
-            background: #f8fafc;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.3);
             position: relative;
         }
         
@@ -323,22 +368,31 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: var(--brand-black);
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
             color: var(--brand-white);
             padding: 16px 24px;
             font-family: 'Inter', sans-serif;
             font-weight: 800;
             font-size: 16px;
-            border: 3px solid var(--brand-yellow);
-            box-shadow: 6px 6px 0 var(--brand-purple);
-            border-radius: 8px;
-            transform: translateY(150px);
-            transition: all 0.3s ease;
+            border: 2px solid var(--brand-white);
+            box-shadow: 0 12px 32px rgba(192, 132, 252, 0.4);
+            border-radius: 12px;
+            transform: translateY(150px) scale(0.9);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 1000;
         }
         
         .toast.show {
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+        
+        /* Ensure the raw email HTML inside the preview isn't affected by portal styles */
+        .email-preview > table {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-radius: 12px;
         }
     </style>
 </head>
@@ -374,13 +428,13 @@
             </div>
             <div class="email-preview" id="email-content-1"></div>
             <textarea id="raw-html-1" style="display:none;">
-<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f8fafc; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
   <tr>
     <td align="center">
       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 3px solid #1e293b; border-radius: 12px; border-bottom: 8px solid #1e293b; border-right: 8px solid #1e293b; overflow: hidden; max-width: 600px; margin: 0 auto; table-layout: fixed;">
         <tr>
           <td align="center" style="background-color: #fde047; padding: 25px 20px; border-bottom: 3px solid #1e293b;">
-            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_1.png" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_1.jpg" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
           </td>
         </tr>
         <tr>
@@ -424,13 +478,13 @@
             </div>
             <div class="email-preview" id="email-content-2"></div>
             <textarea id="raw-html-2" style="display:none;">
-<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f8fafc; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
   <tr>
     <td align="center">
       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 3px solid #1e293b; border-radius: 12px; border-bottom: 8px solid #1e293b; border-right: 8px solid #1e293b; overflow: hidden; max-width: 600px; margin: 0 auto; table-layout: fixed;">
         <tr>
           <td align="center" style="background-color: #fb7185; padding: 25px 20px; border-bottom: 3px solid #1e293b;">
-            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_2.png" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_2.jpg" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
           </td>
         </tr>
         <tr>
@@ -475,13 +529,13 @@
             </div>
             <div class="email-preview" id="email-content-3"></div>
             <textarea id="raw-html-3" style="display:none;">
-<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f8fafc; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
   <tr>
     <td align="center">
       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 3px solid #1e293b; border-radius: 12px; border-bottom: 8px solid #1e293b; border-right: 8px solid #1e293b; overflow: hidden; max-width: 600px; margin: 0 auto; table-layout: fixed;">
         <tr>
           <td align="center" style="background-color: #7dd3fc; padding: 25px 20px; border-bottom: 3px solid #1e293b;">
-            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_3.png" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_3.jpg" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
           </td>
         </tr>
         <tr>
@@ -526,13 +580,13 @@
             </div>
             <div class="email-preview" id="email-content-4"></div>
             <textarea id="raw-html-4" style="display:none;">
-<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f8fafc; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
   <tr>
     <td align="center">
       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 3px solid #1e293b; border-radius: 12px; border-bottom: 8px solid #1e293b; border-right: 8px solid #1e293b; overflow: hidden; max-width: 600px; margin: 0 auto; table-layout: fixed;">
         <tr>
           <td align="center" style="background-color: #c084fc; padding: 25px 20px; border-bottom: 3px solid #1e293b;">
-            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_4.png" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_4.jpg" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
           </td>
         </tr>
         <tr>
@@ -576,13 +630,13 @@
             </div>
             <div class="email-preview" id="email-content-5"></div>
             <textarea id="raw-html-5" style="display:none;">
-<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f8fafc; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
   <tr>
     <td align="center">
       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 3px solid #1e293b; border-radius: 12px; border-bottom: 8px solid #1e293b; border-right: 8px solid #1e293b; overflow: hidden; max-width: 600px; margin: 0 auto; table-layout: fixed;">
         <tr>
           <td align="center" style="background-color: #fde047; padding: 25px 20px; border-bottom: 3px solid #1e293b;">
-            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_5.png" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_5.jpg" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
           </td>
         </tr>
         <tr>
@@ -627,13 +681,13 @@
             </div>
             <div class="email-preview" id="email-content-6"></div>
             <textarea id="raw-html-6" style="display:none;">
-<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f8fafc; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
   <tr>
     <td align="center">
       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 3px solid #1e293b; border-radius: 12px; border-bottom: 8px solid #1e293b; border-right: 8px solid #1e293b; overflow: hidden; max-width: 600px; margin: 0 auto; table-layout: fixed;">
         <tr>
           <td align="center" style="background-color: #7dd3fc; padding: 25px 20px; border-bottom: 3px solid #1e293b;">
-            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_6.png" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
+            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_6.jpg" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
           </td>
         </tr>
         <tr>
@@ -687,7 +741,7 @@
             
             if (linkElement) {
                 linkElement.classList.add('active');
-                // Auto-scroll the pill menu on mobile so active link stays visible
+                // Auto-scroll the pill menu on mobile
                 if (window.innerWidth < 900) {
                     const nav = document.querySelector('.nav-links');
                     nav.scrollTo({
