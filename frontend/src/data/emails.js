@@ -7,10 +7,12 @@ export const emailSequence = [
   <tr>
     <td align="center" style="padding: 40px 15px;">
       <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color:#ffffff; max-width:600px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-        <!-- Header Image -->
+        <!-- Header Image (Linked to YouTube) -->
         <tr>
           <td align="center" style="background-color: #0f172a;">
-            <img src="https://hungeractionheroes.org/cdn/shop/files/Hero_Video_Thumbnail1.png" width="600" alt="Hunger Action Heroes Video" style="display: block; width: 100%; max-width: 600px; height: auto;" />
+            <a href="https://www.youtube.com/watch?v=HHH3JWY2_bs" target="_blank" style="text-decoration: none; display: block;">
+              <img src="https://hungeractionheroes.org/cdn/shop/files/Hero_Video_Thumbnail1.png" width="600" alt="Watch Hunger Action Heroes Video" style="display: block; width: 100%; max-width: 600px; height: auto; border: 0;" />
+            </a>
           </td>
         </tr>
         
@@ -31,7 +33,7 @@ export const emailSequence = [
             <table role="presentation" cellspacing="0" cellpadding="0" border="0">
               <tr>
                 <td align="center" bgcolor="#F7B500" style="border-radius: 4px;">
-                  <a href="https://www.youtube.com/@hungeractionheroes" target="_blank" style="font-size: 16px; font-family: 'Inter', Helvetica, Arial, sans-serif; color: #0f172a; text-decoration: none; padding: 14px 24px; border: 1px solid #F7B500; display: inline-block; font-weight: bold;">Watch Our Mission Video</a>
+                  <a href="https://www.youtube.com/watch?v=HHH3JWY2_bs" target="_blank" style="font-size: 16px; font-family: 'Inter', Helvetica, Arial, sans-serif; color: #0f172a; text-decoration: none; padding: 14px 24px; border: 1px solid #F7B500; display: inline-block; font-weight: bold;">Watch Our Mission Video</a>
                 </td>
               </tr>
             </table>
@@ -65,9 +67,10 @@ export const emailSequence = [
     <td align="center" style="padding: 40px 15px;">
       <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color:#ffffff; max-width:600px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
         
-        <!-- Banner -->
+        <!-- Banner (Subtle Branding Added) -->
         <tr>
           <td align="center" style="background-color: #0f172a; padding: 30px;">
+            <img src="https://hungeractionheroes.org/cdn/shop/files/footer-logo_200x.png" width="100" alt="Logo" style="display: block; margin-bottom: 15px; border: 0;" />
             <h1 style="color: #ffffff; font-size: 26px; margin: 0; font-weight: 700;">Proof of Impact.</h1>
           </td>
         </tr>
@@ -187,9 +190,16 @@ export const emailSequence = [
     <td align="center" style="padding: 40px 15px;">
       <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color:#ffffff; max-width:600px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
         
+        <!-- Minimal Logo Header -->
+        <tr>
+          <td align="center" style="padding: 30px 30px 0 30px;">
+            <img src="https://hungeractionheroes.org/cdn/shop/files/footer-logo_200x.png" width="120" alt="Logo" style="display: block; border: 0;" />
+          </td>
+        </tr>
+
         <!-- Content Body -->
         <tr>
-          <td style="padding: 40px 30px;">
+          <td style="padding: 30px 30px 40px 30px;">
             <h1 style="color: #0f172a; font-size: 22px; font-weight: 700; margin: 0 0 20px 0; line-height: 1.3;">
               The power of student leadership.
             </h1>
@@ -298,9 +308,17 @@ export const emailSequence = [
     <td align="center" style="padding: 40px 15px;">
       <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color:#ffffff; max-width:600px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
         
+        <!-- Minimal Sub-Brand Divider -->
+        <tr>
+          <td align="left" style="padding: 40px 30px 0 30px;">
+            <img src="https://hungeractionheroes.org/cdn/shop/files/footer-logo_200x.png" width="100" alt="Logo" style="display: block; margin-bottom: 20px; border: 0;" />
+            <hr style="border: none; border-top: 3px solid #F7B500; margin: 0; width: 50px;" />
+          </td>
+        </tr>
+        
         <!-- Content Body -->
         <tr>
-          <td style="padding: 40px 30px;">
+          <td style="padding: 30px 30px 40px 30px;">
             <p style="color: #334155; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
               Over the last few weeks, I’ve shared how our curriculum builds Cognitive Trust, drives verifiable social impact, and aligns with your state standards.
             </p>
