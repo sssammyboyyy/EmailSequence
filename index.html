@@ -6,18 +6,16 @@
     <title>HAHU Agency Pitch - Email Sequence</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --brand-red: #fb7185;
-            --brand-yellow: #fde047;
-            --brand-blue: #7dd3fc;
-            --brand-purple: #c084fc;
-            --brand-black: #1e293b;
+            --brand-yellow: #F7B500;
+            --brand-slate: #0f172a;
             --brand-white: #ffffff;
-            --brand-bg: #fdfbf7;
-            --brand-gray: #f1f5f9;
+            --brand-bg: #f8fafc;
+            --brand-gray: #e2e8f0;
+            --brand-text: #334155;
         }
 
         body {
@@ -25,23 +23,21 @@
             padding: 0;
             font-family: 'Inter', sans-serif;
             background-color: var(--brand-bg);
-            color: var(--brand-black);
+            color: var(--brand-text);
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
-        /* Responsive Layout */
         @media (min-width: 900px) {
-            body {
-                flex-direction: row;
-            }
+            body { flex-direction: row; }
             .sidebar {
                 width: 320px;
                 height: 100vh;
                 position: fixed;
                 overflow-y: auto;
-                border-right: 3px solid var(--brand-black);
+                background-color: var(--brand-slate);
+                color: var(--brand-white);
             }
             .main-content {
                 margin-left: 320px;
@@ -50,172 +46,44 @@
             }
         }
 
-        @media (max-width: 899px) {
-            .sidebar {
-                width: 100%;
-                position: sticky;
-                top: 0;
-                height: auto;
-                border-bottom: 3px solid var(--brand-black);
-                display: flex;
-                flex-direction: column;
-                z-index: 100;
-                padding: 15px 10px !important;
-            }
-            .logo-container {
-                margin-bottom: 15px !important;
-            }
-            .sidebar h1 {
-                font-size: 32px !important;
-            }
-            .nav-links {
-                display: flex;
-                overflow-x: auto;
-                white-space: nowrap;
-                -webkit-overflow-scrolling: touch;
-                padding: 5px 10px 15px 5px !important;
-                gap: 12px;
-            }
-            .nav-links::-webkit-scrollbar {
-                display: none;
-            }
-            .nav-links li {
-                margin-bottom: 0 !important;
-            }
-            .nav-links a {
-                padding: 10px 20px !important;
-                border-radius: 30px !important;
-                font-size: 14px !important;
-            }
-            .nav-links a::after {
-                display: none;
-            }
-            .main-content {
-                padding: 20px 10px !important;
-            }
-            .email-header {
-                flex-direction: column;
-                align-items: flex-start !important;
-            }
-            .action-buttons {
-                width: 100%;
-            }
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        /* Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 10px;
-            height: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--brand-white);
-            border-left: 2px solid var(--brand-black);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--brand-blue);
-            border: 2px solid var(--brand-black);
-            border-radius: 5px;
-        }
-
         .sidebar {
-            background-color: var(--brand-white);
-            padding: 30px;
+            padding: 40px 30px;
             box-sizing: border-box;
-            box-shadow: 4px 0 15px rgba(0,0,0,0.03);
-        }
-
-        .logo-container {
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .sidebar h1 {
-            font-family: 'Bangers', cursive;
-            font-size: 42px;
-            letter-spacing: 1px;
+            background-color: var(--brand-slate);
             color: var(--brand-white);
-            background: var(--brand-purple);
-            padding: 8px 16px;
-            border: 3px solid var(--brand-black);
-            box-shadow: 4px 4px 0 var(--brand-black);
-            transform: rotate(-2deg);
-            margin: 0;
-            display: inline-block;
         }
 
+        .logo-container { margin-bottom: 40px; }
+        .sidebar h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            letter-spacing: -0.5px;
+            margin: 0;
+            color: var(--brand-white);
+        }
         .sidebar p.subtitle {
-            font-weight: 800;
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--brand-yellow);
             text-transform: uppercase;
-            font-size: 12px;
-            margin-top: 15px;
-            color: var(--brand-black);
             letter-spacing: 1px;
-            background: var(--brand-yellow);
-            padding: 4px 10px;
-            border: 2px solid var(--brand-black);
-            display: inline-block;
-            transform: rotate(1deg);
-            border-radius: 4px;
+            margin-top: 8px;
         }
 
-        .nav-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .nav-links li {
-            margin-bottom: 15px;
-        }
-
+        .nav-links { list-style: none; padding: 0; margin: 0; }
+        .nav-links li { margin-bottom: 12px; }
         .nav-links a {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 14px 20px;
-            background-color: var(--brand-white);
-            color: var(--brand-black);
+            display: block;
+            padding: 12px 16px;
+            color: #94a3b8;
             text-decoration: none;
-            font-weight: 800;
-            font-size: 15px;
-            border: 3px solid var(--brand-black);
-            border-radius: 10px;
-            box-shadow: 4px 4px 0 var(--brand-black);
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 6px;
             transition: all 0.2s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
-
-        .nav-links a::after {
-            content: '→';
-            font-family: 'Bangers', cursive;
-            font-size: 20px;
-            opacity: 0;
-            transform: translateX(-10px);
-            transition: all 0.2s;
-        }
-
-        .nav-links a:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0 var(--brand-black);
-            background-color: var(--brand-gray);
-        }
-
-        .nav-links a:hover::after {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .nav-links a.active {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0 var(--brand-black);
-            background-color: var(--brand-blue);
-            color: var(--brand-black);
-        }
+        .nav-links a:hover { background-color: #1e293b; color: var(--brand-white); }
+        .nav-links a.active { background-color: var(--brand-yellow); color: var(--brand-slate); }
 
         .main-content {
             padding: 40px;
@@ -230,116 +98,89 @@
             width: 100%;
             max-width: 800px;
             background: var(--brand-white);
-            border: 3px solid var(--brand-black);
-            box-shadow: 8px 8px 0 var(--brand-black);
+            border: 1px solid var(--brand-gray);
             border-radius: 12px;
             overflow: hidden;
-            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
-
-        .email-section.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            0% { transform: translateY(10px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
+        .email-section.active { display: block; }
 
         .email-header {
-            background: var(--brand-gray);
-            padding: 20px;
-            border-bottom: 3px solid var(--brand-black);
+            background: #f1f5f9;
+            padding: 24px;
+            border-bottom: 1px solid var(--brand-gray);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 15px;
         }
 
-        .subject-container {
-            flex-grow: 1;
-        }
-        
         .subject-label {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
             font-size: 12px;
-            color: var(--brand-purple);
+            color: #64748b;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-weight: 800;
             margin-bottom: 6px;
         }
-
         .subject-line {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 600;
-            color: var(--brand-black);
-            background-color: var(--brand-white);
-            padding: 10px 14px;
-            border: 2px solid var(--brand-black);
-            border-radius: 6px;
-            display: inline-block;
-            box-shadow: 2px 2px 0 var(--brand-black);
+            color: var(--brand-slate);
         }
 
         .action-buttons {
             display: flex;
-            gap: 15px;
-        }
-
-        .btn {
-            background-color: var(--brand-red);
-            color: var(--brand-white);
-            border: 3px solid var(--brand-black);
-            border-radius: 8px;
-            padding: 12px 20px;
-            font-family: 'Bangers', cursive;
-            font-size: 20px;
-            letter-spacing: 1px;
-            cursor: pointer;
-            box-shadow: 4px 4px 0 var(--brand-black);
-            transition: all 0.15s ease;
-        }
-
-        .btn:hover {
-            transform: translate(-1px, -1px);
-            box-shadow: 5px 5px 0 var(--brand-black);
-            background-color: #f43f5e;
-        }
-
-        .btn:active {
-            transform: translate(3px, 3px);
-            box-shadow: 1px 1px 0 var(--brand-black);
-        }
-
-        .email-preview {
-            padding: 0;
-            background: #f8fafc;
-            position: relative;
+            gap: 12px;
         }
         
+        .btn {
+            background-color: var(--brand-white);
+            color: var(--brand-slate);
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 10px 16px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn:hover { background-color: #f8fafc; border-color: #94a3b8; }
+        
+        .btn-primary { background-color: var(--brand-slate); color: var(--brand-white); border-color: var(--brand-slate); }
+        .btn-primary:hover { background-color: #1e293b; border-color: #1e293b; color: white; }
+
+        .email-preview {
+            background: #cbd5e1;
+            padding: 40px 0;
+            transition: background 0.3s ease;
+        }
+        
+        /* Dark Mode Toggle CSS overrides */
+        .email-preview.dark-mode-sim {
+            background: #000000;
+        }
+        .email-preview.dark-mode-sim table.email-wrapper {
+            background-color: #121212 !important;
+            border-color: #333333 !important;
+        }
+        .email-preview.dark-mode-sim .text-dark { color: #ffffff !important; }
+        .email-preview.dark-mode-sim .text-muted { color: #a1a1aa !important; }
+        .email-preview.dark-mode-sim .bg-light { background-color: #1e1e1e !important; }
+
         .toast {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: var(--brand-black);
+            background: var(--brand-slate);
             color: var(--brand-white);
             padding: 16px 24px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 16px;
-            border: 3px solid var(--brand-yellow);
-            box-shadow: 6px 6px 0 var(--brand-purple);
             border-radius: 8px;
             transform: translateY(150px);
             transition: all 0.3s ease;
-            z-index: 1000;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
-        
-        .toast.show {
-            transform: translateY(0);
-        }
+        .toast.show { transform: translateY(0); }
     </style>
 </head>
 <body>
@@ -347,503 +188,680 @@
     <div class="sidebar">
         <div class="logo-container">
             <h1>HAHU PITCH</h1>
-            <p class="subtitle">Partnership Sequence</p>
+            <p class="subtitle">B2B Partner Sequence</p>
         </div>
         <ul class="nav-links">
-            <li><a href="#week-1" onclick="showEmail(1, this)">Week 1: The Invisible Problem</a></li>
-            <li><a href="#week-2" onclick="showEmail(2, this)">Week 2: Why Facts Fail</a></li>
-            <li><a href="#week-3" onclick="showEmail(3, this)">Week 3: Gamifying Impact</a></li>
-            <li><a href="#week-4" onclick="showEmail(4, this)">Week 4: The Curriculum Bundle</a></li>
-            <li><a href="#week-5" onclick="showEmail(5, this)">Week 5: Classroom Kits (Scarcity)</a></li>
-            <li><a href="#week-6" onclick="showEmail(6, this)">Week 6: The Leaderboard Cutoff</a></li>
+            <li><a href="#week-1" onclick="showEmail(1, this)">Week 1</a></li>
+            <li><a href="#week-2" onclick="showEmail(2, this)">Week 2</a></li>
+            <li><a href="#week-3" onclick="showEmail(3, this)">Week 3</a></li>
+            <li><a href="#week-4" onclick="showEmail(4, this)">Week 4</a></li>
+            <li><a href="#week-5" onclick="showEmail(5, this)">Week 5</a></li>
+            <li><a href="#week-6" onclick="showEmail(6, this)">Week 6</a></li>
         </ul>
     </div>
-
     <div class="main-content">
 
-        <!-- WEEK 1 -->
         <div id="week-1" class="email-section">
             <div class="email-header">
-                <!-- SUBJECT A: The hidden crisis at [School Name] | SUBJECT B: Why [City/District] teachers are burning out | SUBJECT C: A zero-prep SEL win for your teachers -->
                 <div class="subject-container">
                     <div class="subject-label">SUBJECT LINE:</div>
                     <div class="subject-line">The hidden crisis at [School Name]</div>
                 </div>
                 <div class="action-buttons">
-                    <button class="btn" onclick="copyHTML(1)">COPY HTML CODE</button>
+                    <button class="btn" onclick="toggleDarkMode(1)">🌓 TOGGLE DARK MODE</button>
+                    <button class="btn btn-primary" onclick="copyHTML(1)">COPY HTML</button>
                 </div>
             </div>
             <div class="email-preview" id="email-content-1"></div>
-            <textarea id="raw-html-1" style="display:none;">
-<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
-  <tr>
-    <td align="center">
-      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 3px solid #1e293b; border-radius: 12px; border-bottom: 8px solid #1e293b; border-right: 8px solid #1e293b; overflow: hidden; max-width: 600px; margin: 0 auto; table-layout: fixed;">
-        <tr>
-          <td align="center" style="background-color: #fde047; padding: 25px 20px; border-bottom: 3px solid #1e293b;">
-            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_1.png" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 40px 30px 10px 30px;">
-            <h2 style="margin: 0 0 20px 0; font-family: 'Bangers', cursive; font-size: 28px; color: #1e293b; letter-spacing: 1px;">Hi [First Name],</h2>
-            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">Right now, your teachers are exhausted. They dread new initiatives.</p>
+            <textarea id="raw-html-1" style="display:none;"><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+    <title>Email Week 1</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f1f5f9;">
+    <!-- WRAPPER TABLE FOR OUTLOOK MAX WIDTH -->
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 40px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
+      <tr>
+        <td align="center">
+          <table role="presentation" class="email-wrapper" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 1px solid #e2e8f0; width: 100%; max-width: 600px; margin: 0 auto; table-layout: fixed;">
             
-            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 20px 0; background-color: #f8fafc; border-left: 6px solid #fb7185; border-radius: 4px;">
+            <!-- HEADER IMAGE -->
+            <tr>
+              <td align="center" style="background-color: #0f172a; padding: 0;">
+                <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_1.png" alt="Hunger Action Heroes" width="600" style="display: block; width: 100%; max-width: 600px; height: auto;" />
+              </td>
+            </tr>
+            
+            <!-- BODY CONTENT -->
+            <tr>
+              <td style="padding: 40px 40px 10px 40px;" class="text-dark">
+                
+            <h2 style="margin: 0 0 20px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 24px; color: #0f172a; font-weight: 800;">Hi [First Name],</h2>
+            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6;">Right now, your teachers are exhausted. They dread new initiatives.</p>
+            
+            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 20px 0;">
               <tr>
-                <td style="padding: 15px 20px;">
+                <td style="padding: 15px 20px; background-color: #f8fafc; border-left: 4px solid #F7B500;">
                   <p style="margin: 0; font-style: italic; font-size: 15px; color: #475569; line-height: 1.6;">"You are pressured to improve SEL metrics across [City/District]. But adding more work to their plates is not the answer."</p>
                 </td>
               </tr>
             </table>
 
-            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">What if you had a turnkey system? One where students volunteer to become community leaders. <span style="background-color: #fde047; padding: 2px 6px; border-radius: 4px; font-weight: bold; border: 1px solid #1e293b;">Without adding one minute of teacher prep.</span></p>
+            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6;">What if you had a turnkey system? One where students volunteer to become community leaders. <strong>Without adding one minute of teacher prep.</strong></p>
             
-            <div style="background-color: #7dd3fc; border: 2px solid #1e293b; padding: 16px 20px; margin: 24px 0; border-radius: 8px; text-align: center; box-shadow: 4px 4px 0px #1e293b;">
-                <p style="margin: 0; font-family: 'Bangers', cursive; font-size: 24px; color: #1e293b; letter-spacing: 1px;">INTRODUCING THE NARRATIVE EMPATHY ENGINE</p>
-            </div>
-            
-            <p style="margin: 0 0 24px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">It uses comic-book superheroes to build deep empathy. Instantly.</p>
-            
-            <p style="margin: 0 0 30px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #1e293b; line-height: 1.6; font-weight: 800; text-align: center;">Can I send you a free, zero-prep activity sheet for [School Name]?</p>
-            
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 0 20px 0;">
+            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 24px 0;">
                 <tr>
-                    <td>
-                        <p style="margin: 0 0 4px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">Best,</p>
-                        <p style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #1e293b; line-height: 1.6; font-weight: 800;">Sam</p>
-                        <p style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 14px; color: #64748b; line-height: 1.6; font-weight: 600; text-transform: uppercase;">Hunger Action Heroes</p>
+                    <td align="center" style="background-color: #0f172a; padding: 16px 20px;">
+                        <p style="margin: 0; font-family: 'Outfit', 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #ffffff; letter-spacing: 1px; font-weight: 700;">INTRODUCING THE NARRATIVE EMPATHY ENGINE</p>
                     </td>
                 </tr>
             </table>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-</textarea>
+            
+            <p style="margin: 0 0 24px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6;">It uses character-driven narratives to build deep empathy. Instantly.</p>
+            
+            <p style="margin: 0 0 30px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #0f172a; line-height: 1.6; font-weight: 800; text-align: center;">Can I send you a free, zero-prep activity sheet for [School Name]?</p>
+        
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 0 20px 0;">
+                    <tr>
+                        <td>
+                            <p class="text-muted" style="margin: 0 0 4px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #64748b; line-height: 1.6;">Wishing you the best,</p>
+                            <p class="text-dark" style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #0f172a; font-weight: 800;">Sam</p>
+                            <p class="text-muted" style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 13px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Hunger Action Heroes</p>
+                        </td>
+                    </tr>
+                </table>
+              </td>
+            </tr>
+            
+            <!-- FOOTER -->
+            <tr>
+              <td style="padding: 0 40px 30px 40px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                    <tr>
+                        <td align="center" style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 12px; color: #94a3b8; line-height: 1.5;">
+                            <p style="margin: 0 0 8px 0;">
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Website</a> | 
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Facebook</a> | 
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Instagram</a>
+                            </p>
+                            <p style="margin: 0 0 8px 0;">[Physical Address Placeholder]</p>
+                            <p style="margin: 0;"><a href="#" style="color: #94a3b8; text-decoration: underline;">Unsubscribe</a></p>
+                        </td>
+                    </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+</body>
+</html></textarea>
         </div>
 
-        <!-- WEEK 2 -->
         <div id="week-2" class="email-section">
             <div class="email-header">
-                <!-- SUBJECT A: Why facts fail at [School Name] | SUBJECT B: The secret to engaged students in [City/District] | SUBJECT C: Turn middle schoolers into heroes instantly -->
                 <div class="subject-container">
                     <div class="subject-label">SUBJECT LINE:</div>
                     <div class="subject-line">Why facts fail at [School Name]</div>
                 </div>
                 <div class="action-buttons">
-                    <button class="btn" onclick="copyHTML(2)">COPY HTML CODE</button>
+                    <button class="btn" onclick="toggleDarkMode(2)">🌓 TOGGLE DARK MODE</button>
+                    <button class="btn btn-primary" onclick="copyHTML(2)">COPY HTML</button>
                 </div>
             </div>
             <div class="email-preview" id="email-content-2"></div>
-            <textarea id="raw-html-2" style="display:none;">
-<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
-  <tr>
-    <td align="center">
-      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 3px solid #1e293b; border-radius: 12px; border-bottom: 8px solid #1e293b; border-right: 8px solid #1e293b; overflow: hidden; max-width: 600px; margin: 0 auto; table-layout: fixed;">
-        <tr>
-          <td align="center" style="background-color: #fb7185; padding: 25px 20px; border-bottom: 3px solid #1e293b;">
-            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_2.png" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 40px 30px 10px 30px;">
-            <h2 style="margin: 0 0 20px 0; font-family: 'Bangers', cursive; font-size: 28px; color: #1e293b; letter-spacing: 1px;">Hi [First Name],</h2>
-            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">If you tell a middle schooler a fact, they forget it instantly.</p>
-            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">Data does not change behavior. But stories do. Imagine your students reading about <strong style="color: #1e293b; background-color: #fde047; padding: 0 4px; border: 1px solid #1e293b; border-radius: 4px;">Demeter</strong>, a hero defending her town.</p>
+            <textarea id="raw-html-2" style="display:none;"><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+    <title>Email Week 2</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f1f5f9;">
+    <!-- WRAPPER TABLE FOR OUTLOOK MAX WIDTH -->
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 40px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
+      <tr>
+        <td align="center">
+          <table role="presentation" class="email-wrapper" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 1px solid #e2e8f0; width: 100%; max-width: 600px; margin: 0 auto; table-layout: fixed;">
+            
+            <!-- HEADER IMAGE -->
+            <tr>
+              <td align="center" style="background-color: #0f172a; padding: 0;">
+                <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_2.png" alt="Hunger Action Heroes" width="600" style="display: block; width: 100%; max-width: 600px; height: auto;" />
+              </td>
+            </tr>
+            
+            <!-- BODY CONTENT -->
+            <tr>
+              <td style="padding: 40px 40px 10px 40px;" class="text-dark">
+                
+            <h2 style="margin: 0 0 20px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 24px; color: #0f172a; font-weight: 800;">Hi [First Name],</h2>
+            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6;">If you tell a middle schooler a fact, they forget it instantly.</p>
+            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6;">Data does not change behavior. But stories do. Imagine your students reading about <strong>Demeter</strong>, a hero defending her town.</p>
 
-            <!-- FAUX VIDEO PLAYER -->
+            <!-- FAUX VIDEO PLAYER (BULLETPROOF) -->
             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 20px 0;">
               <tr>
-                <td align="center" style="background-color: #1e293b; padding: 40px 20px; border-radius: 8px; border: 3px solid #1e293b; box-shadow: 4px 4px 0px #c084fc;">
+                <td align="center" style="background-color: #0f172a; padding: 40px 20px;">
                   <a href="https://hungeractionheroes.org" style="text-decoration: none;">
-                    <div style="background-color: #fb7185; width: 60px; height: 60px; border-radius: 50%; display: inline-block; border: 3px solid #ffffff; line-height: 60px; text-align: center;">
-                      <span style="color: #ffffff; font-size: 24px; margin-left: 4px;">▶</span>
-                    </div>
-                    <p style="margin: 10px 0 0 0; color: #ffffff; font-family: 'Inter', Helvetica, Arial, sans-serif; font-weight: bold;">WATCH THE AUDIOBOOK IN ACTION</p>
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                            <td align="center" valign="middle" style="background-color: #F7B500; width: 60px; height: 60px; border: 2px solid #ffffff; border-radius: 30px;">
+                                <p style="margin:0; font-size: 24px; color: #0f172a; line-height: 60px; margin-left: 4px;">▶</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <p style="margin: 15px 0 0 0; color: #ffffff; font-family: 'Inter', Helvetica, Arial, sans-serif; font-weight: bold; font-size: 14px; letter-spacing: 1px;">WATCH THE AUDIOBOOK IN ACTION</p>
                   </a>
                 </td>
               </tr>
             </table>
             
-            <p style="margin: 0 0 24px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">It transforms school culture. It boosts [School Name]'s social impact metrics. Completely effortlessly.</p>
+            <p style="margin: 0 0 24px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6;">It transforms school culture. It boosts [School Name]'s social impact metrics. Completely effortlessly.</p>
             
-            <p style="margin: 0 0 30px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #1e293b; line-height: 1.6; font-weight: 800; text-align: center;">Are your teachers ready for an easy win?</p>
+            <p style="margin: 0 0 30px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #0f172a; line-height: 1.6; font-weight: 800; text-align: center;">Are your teachers ready for an easy win?</p>
+        
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 0 20px 0;">
+                    <tr>
+                        <td>
+                            <p class="text-muted" style="margin: 0 0 4px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #64748b; line-height: 1.6;">Wishing you the best,</p>
+                            <p class="text-dark" style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #0f172a; font-weight: 800;">Sam</p>
+                            <p class="text-muted" style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 13px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Hunger Action Heroes</p>
+                        </td>
+                    </tr>
+                </table>
+              </td>
+            </tr>
             
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 0 20px 0;">
-                <tr>
-                    <td>
-                        <p style="margin: 0 0 4px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">Best,</p>
-                        <p style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #1e293b; line-height: 1.6; font-weight: 800;">Sam</p>
-                        <p style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 14px; color: #64748b; line-height: 1.6; font-weight: 600; text-transform: uppercase;">Hunger Action Heroes</p>
-                    </td>
-                </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-</textarea>
+            <!-- FOOTER -->
+            <tr>
+              <td style="padding: 0 40px 30px 40px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                    <tr>
+                        <td align="center" style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 12px; color: #94a3b8; line-height: 1.5;">
+                            <p style="margin: 0 0 8px 0;">
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Website</a> | 
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Facebook</a> | 
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Instagram</a>
+                            </p>
+                            <p style="margin: 0 0 8px 0;">[Physical Address Placeholder]</p>
+                            <p style="margin: 0;"><a href="#" style="color: #94a3b8; text-decoration: underline;">Unsubscribe</a></p>
+                        </td>
+                    </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+</body>
+</html></textarea>
         </div>
 
-        <!-- WEEK 3 -->
         <div id="week-3" class="email-section">
             <div class="email-header">
-                <!-- SUBJECT A: A massive win for [School Name] | SUBJECT B: How [City/District] schools gamify impact | SUBJECT C: Put your school on the leaderboard -->
                 <div class="subject-container">
                     <div class="subject-label">SUBJECT LINE:</div>
-                    <div class="subject-line">A massive win for [School Name]</div>
+                    <div class="subject-line">Gamifying Impact at [School Name]</div>
                 </div>
                 <div class="action-buttons">
-                    <button class="btn" onclick="copyHTML(3)">COPY HTML CODE</button>
+                    <button class="btn" onclick="toggleDarkMode(3)">🌓 TOGGLE DARK MODE</button>
+                    <button class="btn btn-primary" onclick="copyHTML(3)">COPY HTML</button>
                 </div>
             </div>
             <div class="email-preview" id="email-content-3"></div>
-            <textarea id="raw-html-3" style="display:none;">
-<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
-  <tr>
-    <td align="center">
-      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 3px solid #1e293b; border-radius: 12px; border-bottom: 8px solid #1e293b; border-right: 8px solid #1e293b; overflow: hidden; max-width: 600px; margin: 0 auto; table-layout: fixed;">
-        <tr>
-          <td align="center" style="background-color: #7dd3fc; padding: 25px 20px; border-bottom: 3px solid #1e293b;">
-            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_3.png" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 40px 30px 10px 30px;">
-            <h2 style="margin: 0 0 20px 0; font-family: 'Bangers', cursive; font-size: 28px; color: #1e293b; letter-spacing: 1px;">Hi [First Name],</h2>
-            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">What happens when you combine comic books with school pride?</p>
-            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">Our data shows that <strong style="background-color: #7dd3fc; padding: 2px 6px; border-radius: 4px; border: 1px solid #1e293b;">gamifying community service</strong> skyrockets student participation.</p>
+            <textarea id="raw-html-3" style="display:none;"><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+    <title>Email Week 3</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f1f5f9;">
+    <!-- WRAPPER TABLE FOR OUTLOOK MAX WIDTH -->
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 40px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
+      <tr>
+        <td align="center">
+          <table role="presentation" class="email-wrapper" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 1px solid #e2e8f0; width: 100%; max-width: 600px; margin: 0 auto; table-layout: fixed;">
             
-            <!-- LEADERBOARD VISUALIZATION -->
-            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 24px 0; border: 2px solid #1e293b; border-radius: 8px; overflow: hidden; text-align: center;">
-              <tr>
-                <td colspan="3" style="background-color: #1e293b; color: #ffffff; padding: 10px; font-family: 'Bangers', cursive; font-size: 20px; letter-spacing: 1px;">🏆 CITY LEADERBOARD PREVIEW 🏆</td>
-              </tr>
-              <tr style="background-color: #fef08a;">
-                <td style="padding: 10px; border-bottom: 1px solid #cbd5e1; font-weight: bold; width: 15%;">#1</td>
-                <td style="padding: 10px; border-bottom: 1px solid #cbd5e1; font-weight: bold; width: 55%; text-align: left;">Lincoln Middle School</td>
-                <td style="padding: 10px; border-bottom: 1px solid #cbd5e1; font-weight: bold; color: #16a34a; width: 30%;">2,450 pts</td>
-              </tr>
-              <tr style="background-color: #f1f5f9;">
-                <td style="padding: 10px; border-bottom: 1px solid #cbd5e1; font-weight: bold;">#2</td>
-                <td style="padding: 10px; border-bottom: 1px solid #cbd5e1; text-align: left;">Washington Junior High</td>
-                <td style="padding: 10px; border-bottom: 1px solid #cbd5e1; font-weight: bold; color: #16a34a;">1,920 pts</td>
-              </tr>
-              <tr style="background-color: #ffffff;">
-                <td style="padding: 10px; font-weight: bold; color: #ef4444;">?</td>
-                <td style="padding: 10px; text-align: left; font-weight: bold; color: #ef4444;">[School Name]</td>
-                <td style="padding: 10px; font-style: italic; color: #64748b;">Pending...</td>
-              </tr>
-            </table>
+            <!-- HEADER IMAGE -->
+            <tr>
+              <td align="center" style="background-color: #0f172a; padding: 0;">
+                <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_3.png" alt="Hunger Action Heroes" width="600" style="display: block; width: 100%; max-width: 600px; height: auto;" />
+              </td>
+            </tr>
             
-            <p style="margin: 0 0 24px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">Students track their real-world impact. Your school climbs the regional rankings. It brings massive positive recognition.</p>
+            <!-- BODY CONTENT -->
+            <tr>
+              <td style="padding: 40px 40px 10px 40px;" class="text-dark">
+                
+            <h2 style="margin: 0 0 20px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 24px; color: #0f172a; font-weight: 800;">Hi [First Name],</h2>
+            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6;">What happens when you combine student empathy with healthy school pride?</p>
+            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6;">Gamifying community service skyrockets student participation. That is why we are launching a massive <strong>Interactive Leaderboard</strong> where schools compete to rescue food for their communities.</p>
             
-            <p style="margin: 0 0 30px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #1e293b; line-height: 1.6; font-weight: 800; text-align: center;">Are you free for a 10-minute chat next Tuesday?</p>
-            
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 0 20px 0;">
+            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 24px 0;">
                 <tr>
-                    <td>
-                        <p style="margin: 0 0 4px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">Best,</p>
-                        <p style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #1e293b; line-height: 1.6; font-weight: 800;">Sam</p>
-                        <p style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 14px; color: #64748b; line-height: 1.6; font-weight: 600; text-transform: uppercase;">Hunger Action Heroes</p>
+                    <td align="center" style="border: 2px dashed #0f172a; padding: 20px;">
+                        <p style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #0f172a; line-height: 1.6; font-weight: 600;">Students track real-world hunger-relief activities and watch their school climb the regional rankings. It is a huge win for district recognition.</p>
                     </td>
                 </tr>
             </table>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-</textarea>
+            
+            <p style="margin: 0 0 24px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6;">We're opening up early enrollment for schools that want to boost student engagement before the leaderboard goes fully public.</p>
+            
+            <p style="margin: 0 0 30px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #0f172a; line-height: 1.6; font-weight: 800; text-align: center;">Would you be open to a quick 10-minute chat next week to see if this fits?</p>
+        
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 0 20px 0;">
+                    <tr>
+                        <td>
+                            <p class="text-muted" style="margin: 0 0 4px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #64748b; line-height: 1.6;">Wishing you the best,</p>
+                            <p class="text-dark" style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #0f172a; font-weight: 800;">Sam</p>
+                            <p class="text-muted" style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 13px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Hunger Action Heroes</p>
+                        </td>
+                    </tr>
+                </table>
+              </td>
+            </tr>
+            
+            <!-- FOOTER -->
+            <tr>
+              <td style="padding: 0 40px 30px 40px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                    <tr>
+                        <td align="center" style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 12px; color: #94a3b8; line-height: 1.5;">
+                            <p style="margin: 0 0 8px 0;">
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Website</a> | 
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Facebook</a> | 
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Instagram</a>
+                            </p>
+                            <p style="margin: 0 0 8px 0;">[Physical Address Placeholder]</p>
+                            <p style="margin: 0;"><a href="#" style="color: #94a3b8; text-decoration: underline;">Unsubscribe</a></p>
+                        </td>
+                    </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+</body>
+</html></textarea>
         </div>
 
-        <!-- WEEK 4 -->
         <div id="week-4" class="email-section">
             <div class="email-header">
-                <!-- SUBJECT A: Make [School Name] a "School of Distinction" | SUBJECT B: The ultimate zero-prep SEL bundle for your teachers | SUBJECT C: Your spot on the [City/District] leaderboard -->
                 <div class="subject-container">
                     <div class="subject-label">SUBJECT LINE:</div>
-                    <div class="subject-line">Make [School Name] a "School of Distinction"</div>
+                    <div class="subject-line">The exact tools to secure your spot</div>
                 </div>
                 <div class="action-buttons">
-                    <button class="btn" onclick="copyHTML(4)">COPY HTML CODE</button>
+                    <button class="btn" onclick="toggleDarkMode(4)">🌓 TOGGLE DARK MODE</button>
+                    <button class="btn btn-primary" onclick="copyHTML(4)">COPY HTML</button>
                 </div>
             </div>
             <div class="email-preview" id="email-content-4"></div>
-            <textarea id="raw-html-4" style="display:none;">
-<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
-  <tr>
-    <td align="center">
-      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 3px solid #1e293b; border-radius: 12px; border-bottom: 8px solid #1e293b; border-right: 8px solid #1e293b; overflow: hidden; max-width: 600px; margin: 0 auto; table-layout: fixed;">
-        <tr>
-          <td align="center" style="background-color: #c084fc; padding: 25px 20px; border-bottom: 3px solid #1e293b;">
-            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_4.png" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 40px 30px 10px 30px;">
-            <h2 style="margin: 0 0 20px 0; font-family: 'Bangers', cursive; font-size: 28px; color: #1e293b; letter-spacing: 1px;">Hi [First Name],</h2>
-            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">To get [School Name] on the leaderboard, you need the right tools.</p>
+            <textarea id="raw-html-4" style="display:none;"><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+    <title>Email Week 4</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f1f5f9;">
+    <!-- WRAPPER TABLE FOR OUTLOOK MAX WIDTH -->
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 40px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
+      <tr>
+        <td align="center">
+          <table role="presentation" class="email-wrapper" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 1px solid #e2e8f0; width: 100%; max-width: 600px; margin: 0 auto; table-layout: fixed;">
             
-            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">We just launched the <span style="background-color: #c084fc; color: #ffffff; padding: 2px 6px; border-radius: 4px; font-weight: bold; border: 1px solid #1e293b;">Curriculum Bundle</span>. It is entirely turnkey.</p>
+            <!-- HEADER IMAGE -->
+            <tr>
+              <td align="center" style="background-color: #0f172a; padding: 0;">
+                <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_4.png" alt="Hunger Action Heroes" width="600" style="display: block; width: 100%; max-width: 600px; height: auto;" />
+              </td>
+            </tr>
             
-            <div style="background-color: #f8fafc; border: 2px dashed #fde047; padding: 16px 20px; margin: 24px 0; border-radius: 8px;">
-                <p style="margin: 0 0 8px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #1e293b; line-height: 1.6; font-weight: 800;">Inside the Box:</p>
-                <ul style="margin: 0; padding-left: 20px; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 14px; color: #334155; line-height: 1.5;">
-                    <li style="margin-bottom: 2px;">40 Comic Books</li>
-                    <li style="margin-bottom: 2px;">1 Printed Curriculum Guide</li>
-                    <li style="margin-bottom: 2px;">40 Printed Students Handbooks</li>
-                    <li style="margin-bottom: 2px;">1 Digital Animated Audiobook Experience</li>
-                    <li style="margin-bottom: 2px;">40 Student Certificates & Stickers</li>
-                    <li style="margin-bottom: 2px;">6 Video Messages from Hunger Halter & Demeter</li>
-                    <li>Guaranteed leaderboard access</li>
-                </ul>
-            </div>
+            <!-- BODY CONTENT -->
+            <tr>
+              <td style="padding: 40px 40px 10px 40px;" class="text-dark">
+                
+            <h2 style="margin: 0 0 20px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 24px; color: #0f172a; font-weight: 800;">Hi [First Name],</h2>
+            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6;">To get [School Name] officially on the upcoming Leaderboard, you need the right tools.</p>
+            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6;">We've officially launched the <strong>Curriculum Bundle</strong>. This is the exact turnkey system that helps schools rescue food while teaching core SEL values—with zero heavy lifting.</p>
             
-            <!-- FAUX VIDEO PLAYER -->
-            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 20px 0;">
-              <tr>
-                <td align="center" style="background-color: #334155; padding: 30px 20px; border-radius: 8px; border: 3px solid #1e293b; box-shadow: 4px 4px 0px #fb7185;">
-                  <a href="https://hungeractionheroes.org" style="text-decoration: none;">
-                    <div style="background-color: #fde047; width: 60px; height: 60px; border-radius: 50%; display: inline-block; border: 3px solid #1e293b; line-height: 60px; text-align: center;">
-                      <span style="color: #1e293b; font-size: 24px; margin-left: 4px;">▶</span>
-                    </div>
-                    <p style="margin: 10px 0 0 0; color: #ffffff; font-family: 'Inter', Helvetica, Arial, sans-serif; font-weight: bold;">SEE THE BUNDLE UNBOXING</p>
-                  </a>
-                </td>
-              </tr>
-            </table>
-
-            <p style="margin: 0 0 30px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #1e293b; line-height: 1.6; font-weight: 800; text-align: center;">Buying the bundle secures your slot instantly.</p>
-            
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 0 20px 0;">
-                <tr>
-                    <td>
-                        <p style="margin: 0 0 4px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">Best,</p>
-                        <p style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #1e293b; line-height: 1.6; font-weight: 800;">Sam</p>
-                        <p style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 14px; color: #64748b; line-height: 1.6; font-weight: 600; text-transform: uppercase;">Hunger Action Heroes</p>
-                    </td>
-                </tr>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 20px 30px 40px 30px; text-align: center;">
-            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
-              <tr>
-                <td style="background-color: #c084fc; border: 3px solid #1e293b; border-bottom: 6px solid #1e293b; border-right: 6px solid #1e293b; border-radius: 8px; padding: 16px 28px; text-align: center;">
-                  <a href="https://hungeractionheroes.org" style="color: #ffffff; text-decoration: none; font-weight: 900; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; display: block;">🛡️ CLAIM YOUR BUNDLE 🛡️</a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-</textarea>
-        </div>
-
-        <!-- WEEK 5 -->
-        <div id="week-5" class="email-section">
-            <div class="email-header">
-                <!-- SUBJECT A: Only 15 kits left for [City/District] | SUBJECT B: [School Name]'s superhero kits are selling out | SUBJECT C: Claim your spot before the leaderboard launches -->
-                <div class="subject-container">
-                    <div class="subject-label">SUBJECT LINE:</div>
-                    <div class="subject-line">Only 15 kits left for [City/District]</div>
-                </div>
-                <div class="action-buttons">
-                    <button class="btn" onclick="copyHTML(5)">COPY HTML CODE</button>
-                </div>
-            </div>
-            <div class="email-preview" id="email-content-5"></div>
-            <textarea id="raw-html-5" style="display:none;">
-<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
-  <tr>
-    <td align="center">
-      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 3px solid #1e293b; border-radius: 12px; border-bottom: 8px solid #1e293b; border-right: 8px solid #1e293b; overflow: hidden; max-width: 600px; margin: 0 auto; table-layout: fixed;">
-        <tr>
-          <td align="center" style="background-color: #fde047; padding: 25px 20px; border-bottom: 3px solid #1e293b;">
-            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_5.png" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 40px 30px 10px 30px;">
-            <h2 style="margin: 0 0 20px 0; font-family: 'Bangers', cursive; font-size: 28px; color: #1e293b; letter-spacing: 1px;">Hi [First Name],</h2>
-            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">We are finalizing our <strong style="color: #1e293b; border-bottom: 2px solid #fb7185;">Classroom Superhero</strong> kits for this semester.</p>
-            
-            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">Inventory is moving extremely fast. We only have capacity to onboard 15 more schools in [City/District].</p>
-            
-            <!-- SCARCITY PROGRESS BAR -->
             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 24px 0;">
               <tr>
-                <td>
-                  <p style="margin: 0 0 8px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #be123c; text-transform: uppercase;">DISTRICT CAPACITY: 85% FILLED</p>
-                  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; border: 2px solid #1e293b; border-radius: 8px; height: 24px; overflow: hidden;">
-                    <tr>
-                      <td width="85%" style="background-color: #fb7185; border-right: 2px solid #1e293b;"></td>
-                      <td width="15%"></td>
-                    </tr>
+                <td style="background-color: #f8fafc; padding: 20px; border-left: 4px solid #F7B500;">
+                  <p style="margin: 0 0 12px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #0f172a; font-weight: 800;">The bundle includes:</p>
+                  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tr><td style="padding: 0 0 8px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 15px; color: #334155;">&bull; 40 physical comic books for the classroom</td></tr>
+                    <tr><td style="padding: 0 0 8px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 15px; color: #334155;">&bull; The comprehensive teacher's guide (100% zero-prep)</td></tr>
+                    <tr><td style="padding: 0 0 8px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 15px; color: #334155;">&bull; Digital animated audiobooks and video messages</td></tr>
+                    <tr><td style="padding: 0 0 0 10px; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 15px; color: #334155;">&bull; Official access to the Interactive Leaderboard</td></tr>
                   </table>
                 </td>
               </tr>
             </table>
             
-            <p style="margin: 0 0 30px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #1e293b; line-height: 1.6; font-weight: 800; text-align: center;">Click below to secure [School Name]'s prestige today.</p>
+            <p style="margin: 0 0 30px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #0f172a; line-height: 1.6; font-weight: 800; text-align: center;">Purchasing the bundle today automatically secures your school's slot.</p>
             
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 0 20px 0;">
-                <tr>
-                    <td>
-                        <p style="margin: 0 0 4px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">Best,</p>
-                        <p style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #1e293b; line-height: 1.6; font-weight: 800;">Sam</p>
-                        <p style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 14px; color: #64748b; line-height: 1.6; font-weight: 600; text-transform: uppercase;">Hunger Action Heroes</p>
-                    </td>
-                </tr>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 20px 30px 40px 30px; text-align: center;">
             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
               <tr>
-                <td style="background-color: #fb7185; border: 3px solid #1e293b; border-bottom: 6px solid #1e293b; border-right: 6px solid #1e293b; border-radius: 8px; padding: 16px 28px; text-align: center;">
-                  <a href="https://hungeractionheroes.org" style="color: #ffffff; text-decoration: none; font-weight: 900; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; display: block;">🚨 SECURE YOUR BUNDLES 🚨</a>
+                <td align="center">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                        <td align="center" style="background-color: #F7B500; padding: 14px 24px;">
+                            <a href="https://hungeractionheroes.org" style="color: #0f172a; text-decoration: none; font-weight: 800; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; text-transform: uppercase;">SECURE YOUR BUNDLE</a>
+                        </td>
+                    </tr>
+                  </table>
                 </td>
               </tr>
             </table>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-</textarea>
+            <br>
+        
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 0 20px 0;">
+                    <tr>
+                        <td>
+                            <p class="text-muted" style="margin: 0 0 4px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #64748b; line-height: 1.6;">Wishing you the best,</p>
+                            <p class="text-dark" style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #0f172a; font-weight: 800;">Sam</p>
+                            <p class="text-muted" style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 13px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Hunger Action Heroes</p>
+                        </td>
+                    </tr>
+                </table>
+              </td>
+            </tr>
+            
+            <!-- FOOTER -->
+            <tr>
+              <td style="padding: 0 40px 30px 40px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                    <tr>
+                        <td align="center" style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 12px; color: #94a3b8; line-height: 1.5;">
+                            <p style="margin: 0 0 8px 0;">
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Website</a> | 
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Facebook</a> | 
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Instagram</a>
+                            </p>
+                            <p style="margin: 0 0 8px 0;">[Physical Address Placeholder]</p>
+                            <p style="margin: 0;"><a href="#" style="color: #94a3b8; text-decoration: underline;">Unsubscribe</a></p>
+                        </td>
+                    </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+</body>
+</html></textarea>
         </div>
 
-        <!-- WEEK 6 -->
-        <div id="week-6" class="email-section">
+        <div id="week-5" class="email-section">
             <div class="email-header">
-                <!-- SUBJECT A: Moving on from [School Name] | SUBJECT B: Reallocating your leaderboard spot | SUBJECT C: A final note regarding [Recent School Achievement] -->
                 <div class="subject-container">
                     <div class="subject-label">SUBJECT LINE:</div>
-                    <div class="subject-line">Moving on from [School Name]</div>
+                    <div class="subject-line">Allocation for your district</div>
                 </div>
                 <div class="action-buttons">
-                    <button class="btn" onclick="copyHTML(6)">COPY HTML CODE</button>
+                    <button class="btn" onclick="toggleDarkMode(5)">🌓 TOGGLE DARK MODE</button>
+                    <button class="btn btn-primary" onclick="copyHTML(5)">COPY HTML</button>
+                </div>
+            </div>
+            <div class="email-preview" id="email-content-5"></div>
+            <textarea id="raw-html-5" style="display:none;"><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+    <title>Email Week 5</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f1f5f9;">
+    <!-- WRAPPER TABLE FOR OUTLOOK MAX WIDTH -->
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 40px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
+      <tr>
+        <td align="center">
+          <table role="presentation" class="email-wrapper" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 1px solid #e2e8f0; width: 100%; max-width: 600px; margin: 0 auto; table-layout: fixed;">
+            
+            <!-- HEADER IMAGE -->
+            <tr>
+              <td align="center" style="background-color: #0f172a; padding: 0;">
+                <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_5.png" alt="Hunger Action Heroes" width="600" style="display: block; width: 100%; max-width: 600px; height: auto;" />
+              </td>
+            </tr>
+            
+            <!-- BODY CONTENT -->
+            <tr>
+              <td style="padding: 40px 40px 10px 40px;" class="text-dark">
+                
+            <h2 style="margin: 0 0 20px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 24px; color: #0f172a; font-weight: 800;">Hi [First Name],</h2>
+            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6;">We are currently finalizing the allocation of our <strong>Classroom Kits</strong> for the upcoming semester, and inventory is moving very fast.</p>
+            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6;">Remember, when you purchase the curriculum bundle, <strong>every dollar directly provides two meals and prevents two pounds of food waste.</strong> You get a world-class SEL curriculum that runs itself.</p>
+            
+            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 24px 0;">
+                <tr>
+                    <td align="center" style="background-color: #f1f5f9; border-left: 4px solid #0f172a; padding: 16px 20px;">
+                        <p style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #0f172a; line-height: 1.6; font-weight: 800; text-transform: uppercase;">We only have capacity to onboard 15 more schools in your district before the leaderboard launches.</p>
+                    </td>
+                </tr>
+            </table>
+            
+            <p style="margin: 0 0 30px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #0f172a; line-height: 1.6; font-weight: 800; text-align: center;">Click below to secure your district's prestige and officially enroll [School Name].</p>
+            
+            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+              <tr>
+                <td align="center">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                        <td align="center" style="background-color: #F7B500; padding: 14px 24px;">
+                            <a href="https://hungeractionheroes.org" style="color: #0f172a; text-decoration: none; font-weight: 800; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; text-transform: uppercase;">ENROLL [SCHOOL NAME] NOW</a>
+                        </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <br>
+        
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 0 20px 0;">
+                    <tr>
+                        <td>
+                            <p class="text-muted" style="margin: 0 0 4px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #64748b; line-height: 1.6;">Wishing you the best,</p>
+                            <p class="text-dark" style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #0f172a; font-weight: 800;">Sam</p>
+                            <p class="text-muted" style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 13px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Hunger Action Heroes</p>
+                        </td>
+                    </tr>
+                </table>
+              </td>
+            </tr>
+            
+            <!-- FOOTER -->
+            <tr>
+              <td style="padding: 0 40px 30px 40px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                    <tr>
+                        <td align="center" style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 12px; color: #94a3b8; line-height: 1.5;">
+                            <p style="margin: 0 0 8px 0;">
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Website</a> | 
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Facebook</a> | 
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Instagram</a>
+                            </p>
+                            <p style="margin: 0 0 8px 0;">[Physical Address Placeholder]</p>
+                            <p style="margin: 0;"><a href="#" style="color: #94a3b8; text-decoration: underline;">Unsubscribe</a></p>
+                        </td>
+                    </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+</body>
+</html></textarea>
+        </div>
+
+        <div id="week-6" class="email-section">
+            <div class="email-header">
+                <div class="subject-container">
+                    <div class="subject-label">SUBJECT LINE:</div>
+                    <div class="subject-line">Giving your slot to another district</div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn" onclick="toggleDarkMode(6)">🌓 TOGGLE DARK MODE</button>
+                    <button class="btn btn-primary" onclick="copyHTML(6)">COPY HTML</button>
                 </div>
             </div>
             <div class="email-preview" id="email-content-6"></div>
-            <textarea id="raw-html-6" style="display:none;">
-<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 20px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
-  <tr>
-    <td align="center">
-      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 3px solid #1e293b; border-radius: 12px; border-bottom: 8px solid #1e293b; border-right: 8px solid #1e293b; overflow: hidden; max-width: 600px; margin: 0 auto; table-layout: fixed;">
-        <tr>
-          <td align="center" style="background-color: #7dd3fc; padding: 25px 20px; border-bottom: 3px solid #1e293b;">
-            <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_6.png" alt="Hunger Action Heroes" width="540" style="display: block; width: 100%; max-width: 540px; height: auto; border: 3px solid #1e293b; border-radius: 8px; border-bottom: 5px solid #1e293b; border-right: 5px solid #1e293b; box-sizing: border-box; background-color: #ffffff;" />
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 40px 30px 10px 30px;">
-            <h2 style="margin: 0 0 20px 0; font-family: 'Bangers', cursive; font-size: 28px; color: #1e293b; letter-spacing: 1px;">Hi [First Name],</h2>
-            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">I haven't heard back yet. I will assume effortless student engagement isn't a top priority for [School Name] right now.</p>
+            <textarea id="raw-html-6" style="display:none;"><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+    <title>Email Week 6</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f1f5f9;">
+    <!-- WRAPPER TABLE FOR OUTLOOK MAX WIDTH -->
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; padding: 40px 10px; font-family: 'Inter', Helvetica, Arial, sans-serif;">
+      <tr>
+        <td align="center">
+          <table role="presentation" class="email-wrapper" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 1px solid #e2e8f0; width: 100%; max-width: 600px; margin: 0 auto; table-layout: fixed;">
             
-            <div style="background-color: #f1f5f9; border-left: 6px solid #1e293b; padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0;">
-                <p style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #1e293b; line-height: 1.6; font-weight: 600;">Since our Interactive Leaderboard launches next week, we will give your slot to another district.</p>
-            </div>
+            <!-- HEADER IMAGE -->
+            <tr>
+              <td align="center" style="background-color: #0f172a; padding: 0;">
+                <img src="https://sssammyboyyy.github.io/EmailSequence/assets/week_6.png" alt="Hunger Action Heroes" width="600" style="display: block; width: 100%; max-width: 600px; height: auto;" />
+              </td>
+            </tr>
             
-            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">I respect your decision. I will not reach out again.</p>
+            <!-- BODY CONTENT -->
+            <tr>
+              <td style="padding: 40px 40px 10px 40px;" class="text-dark">
+                
+            <h2 style="margin: 0 0 20px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 24px; color: #0f172a; font-weight: 800;">Hi [First Name],</h2>
+            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6;">I haven't heard back yet. I will assume effortless student engagement isn't a top priority for [School Name] right now.</p>
             
-            <p style="margin: 0 0 30px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">If priorities shift, you can always grab a bundle directly below.</p>
-            
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 0 20px 0;">
+            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 24px 0;">
                 <tr>
-                    <td>
-                        <p style="margin: 0 0 4px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6; font-weight: 400;">Wishing you the best,</p>
-                        <p style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #1e293b; line-height: 1.6; font-weight: 800;">Sam</p>
-                        <p style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 14px; color: #64748b; line-height: 1.6; font-weight: 600; text-transform: uppercase;">Hunger Action Heroes</p>
+                    <td style="background-color: #f1f5f9; border-left: 4px solid #0f172a; padding: 16px 20px;">
+                        <p style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #0f172a; line-height: 1.6; font-weight: 600;">Since our Interactive Leaderboard launches next week, we will give your slot to another district.</p>
                     </td>
                 </tr>
             </table>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 20px 30px 40px 30px; text-align: center;">
+            
+            <p style="margin: 0 0 16px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6;">I respect your decision. I will not reach out again.</p>
+            
+            <p style="margin: 0 0 30px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.6;">If priorities shift, you can always grab a bundle directly below.</p>
+            
             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
               <tr>
-                <td style="background-color: #fde047; border: 3px solid #1e293b; border-bottom: 6px solid #1e293b; border-right: 6px solid #1e293b; border-radius: 8px; padding: 16px 28px; text-align: center;">
-                  <a href="https://hungeractionheroes.org" style="color: #1e293b; text-decoration: none; font-weight: 900; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; display: block;">🛒 FINAL CHANCE: SECURE BUNDLE</a>
+                <td align="center">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                        <td align="center" style="background-color: #F7B500; padding: 14px 24px;">
+                            <a href="https://hungeractionheroes.org" style="color: #0f172a; text-decoration: none; font-weight: 800; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; text-transform: uppercase;">FINAL CHANCE: SECURE BUNDLE</a>
+                        </td>
+                    </tr>
+                  </table>
                 </td>
               </tr>
             </table>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-</textarea>
+            <br>
+        
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 0 20px 0;">
+                    <tr>
+                        <td>
+                            <p class="text-muted" style="margin: 0 0 4px 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; color: #64748b; line-height: 1.6;">Wishing you the best,</p>
+                            <p class="text-dark" style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; color: #0f172a; font-weight: 800;">Sam</p>
+                            <p class="text-muted" style="margin: 0; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 13px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Hunger Action Heroes</p>
+                        </td>
+                    </tr>
+                </table>
+              </td>
+            </tr>
+            
+            <!-- FOOTER -->
+            <tr>
+              <td style="padding: 0 40px 30px 40px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                    <tr>
+                        <td align="center" style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 12px; color: #94a3b8; line-height: 1.5;">
+                            <p style="margin: 0 0 8px 0;">
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Website</a> | 
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Facebook</a> | 
+                                <a href="#" style="color: #64748b; text-decoration: none; font-weight: bold; margin: 0 8px;">Instagram</a>
+                            </p>
+                            <p style="margin: 0 0 8px 0;">[Physical Address Placeholder]</p>
+                            <p style="margin: 0;"><a href="#" style="color: #94a3b8; text-decoration: underline;">Unsubscribe</a></p>
+                        </td>
+                    </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+</body>
+</html></textarea>
         </div>
 
     </div>
-    
     <div class="toast" id="toast">Copied to clipboard! 📋✨</div>
 
     <script>
         for(let i=1; i<=6; i++) {
             const rawHtml = document.getElementById('raw-html-' + i).value;
+            // Inject html but process classes for simulation
             document.getElementById('email-content-' + i).innerHTML = rawHtml;
         }
 
+        function toggleDarkMode(week) {
+            const preview = document.getElementById('email-content-' + week);
+            preview.classList.toggle('dark-mode-sim');
+        }
+
         function showEmail(weekNumber, linkElement) {
-            document.querySelectorAll('.email-section').forEach(el => {
-                el.classList.remove('active');
-            });
-            
-            document.querySelectorAll('.nav-links a').forEach(el => {
-                el.classList.remove('active');
-            });
-            
+            document.querySelectorAll('.email-section').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-links a').forEach(el => el.classList.remove('active'));
             document.getElementById('week-' + weekNumber).classList.add('active');
             
             if (linkElement) {
                 linkElement.classList.add('active');
-                // Auto-scroll the pill menu on mobile
-                if (window.innerWidth < 900) {
-                    const nav = document.querySelector('.nav-links');
-                    nav.scrollTo({
-                        left: linkElement.parentElement.offsetLeft - 10,
-                        behavior: 'smooth'
-                    });
-                }
             } else {
                 document.querySelector(`.nav-links a[href="#week-${weekNumber}"]`).classList.add('active');
             }
-            
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
         function copyHTML(weekNumber) {
             const rawHtml = document.getElementById('raw-html-' + weekNumber).value;
-            navigator.clipboard.writeText(rawHtml).then(() => {
-                showToast('HTML Copied to clipboard! 📋✨');
-            });
+            navigator.clipboard.writeText(rawHtml).then(() => showToast('HTML Copied to clipboard! 📋✨'));
         }
         
         function showToast(msg) {
             const toast = document.getElementById('toast');
             toast.innerText = msg;
             toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
+            setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
