@@ -202,9 +202,9 @@ export const emailSequence = [
     <td align="center" style="padding: 40px 15px;">
       <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color:#ffffff; max-width:600px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
         
-        <!-- Minimal Logo Header -->
+        <!-- Minimal Logo Header (Dark Background for White Logo Text) -->
         <tr>
-          <td align="center" style="padding: 30px 30px 0 30px;">
+          <td align="center" style="background-color: #0f172a; padding: 30px;">
             <img src="https://hungeractionheroes.org/cdn/shop/files/footer-logo_200x.png" width="120" alt="Logo" style="display: block; border: 0;" />
           </td>
         </tr>
@@ -328,9 +328,9 @@ export const emailSequence = [
     <td align="center" style="padding: 40px 15px;">
       <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color:#ffffff; max-width:600px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
         
-        <!-- Minimal Sub-Brand Divider -->
+        <!-- Minimal Sub-Brand Divider (Dark Background for White Logo Text) -->
         <tr>
-          <td align="left" style="padding: 40px 30px 0 30px;">
+          <td align="left" style="background-color: #0f172a; padding: 40px 30px 30px 30px;">
             <img src="https://hungeractionheroes.org/cdn/shop/files/footer-logo_200x.png" width="100" alt="Logo" style="display: block; margin-bottom: 20px; border: 0;" />
             <hr style="border: none; border-top: 3px solid #F7B500; margin: 0; width: 50px;" />
           </td>
