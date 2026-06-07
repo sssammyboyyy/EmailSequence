@@ -43,6 +43,10 @@ export const emailSequence = [
         <!-- Footer -->
         <tr>
           <td style="background-color: #f8fafc; padding: 30px; text-align: center; border-top: 1px solid #e2e8f0;">
+            <p style="color: #0f172a; font-size: 14px; line-height: 1.5; margin: 0 0 10px 0; font-weight: 600;">
+              Warmly,<br/>
+              The HAHU Educator Team
+            </p>
             <p style="color: #64748b; font-size: 13px; line-height: 1.5; margin: 0 0 10px 0;">
               Hunger Action Heroes Unite! &copy; 2026<br/>
               123 Heroes Way, San Diego, CA 92101
@@ -60,14 +64,14 @@ export const emailSequence = [
   },
   {
     week: 2,
-    subject: "Case Study: How Creekside Elementary rescued 10,000 lbs of food",
+    subject: "How Creekside Elementary rescued 10,000 lbs of food",
     html: `
 <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#ffffff; font-family: 'Inter', Helvetica, Arial, sans-serif;">
   <tr>
     <td align="center" style="padding: 40px 15px;">
       <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color:#ffffff; max-width:600px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
         
-        <!-- Banner (Subtle Branding Added) -->
+        <!-- Banner -->
         <tr>
           <td align="center" style="background-color: #0f172a; padding: 30px;">
             <img src="https://hungeractionheroes.org/cdn/shop/files/footer-logo_200x.png" width="100" alt="Logo" style="display: block; margin-bottom: 15px; border: 0;" />
@@ -93,7 +97,7 @@ export const emailSequence = [
             </table>
 
             <p style="color: #334155; font-size: 16px; line-height: 1.6; margin: 0 0 30px 0;">
-              This wasn't an extra-curricular club. It was integrated directly into their project-based learning. By giving students real agency, behavior improved and academic engagement skyrocketed.
+              This wasn't an extra-curricular club. It was integrated directly into their project-based learning. By giving students real agency, behavior improved and academic engagement skyrocketed. We built HAHU so any teacher can replicate this success.
             </p>
             
             <table role="presentation" cellspacing="0" cellpadding="0" border="0">
@@ -109,6 +113,10 @@ export const emailSequence = [
         <!-- Footer -->
         <tr>
           <td style="background-color: #f8fafc; padding: 30px; text-align: center; border-top: 1px solid #e2e8f0;">
+            <p style="color: #0f172a; font-size: 14px; line-height: 1.5; margin: 0 0 10px 0; font-weight: 600;">
+              Warmly,<br/>
+              The HAHU Educator Team
+            </p>
             <p style="color: #64748b; font-size: 13px; line-height: 1.5; margin: 0 0 10px 0;">
               Hunger Action Heroes Unite! &copy; 2026<br/>
               123 Heroes Way, San Diego, CA 92101
@@ -166,6 +174,10 @@ export const emailSequence = [
         <!-- Footer -->
         <tr>
           <td style="background-color: #f8fafc; padding: 30px; text-align: center; border-top: 1px solid #e2e8f0;">
+            <p style="color: #0f172a; font-size: 14px; line-height: 1.5; margin: 0 0 10px 0; font-weight: 600;">
+              Warmly,<br/>
+              The HAHU Educator Team
+            </p>
             <p style="color: #64748b; font-size: 13px; line-height: 1.5; margin: 0 0 10px 0;">
               Hunger Action Heroes Unite! &copy; 2026<br/>
               123 Heroes Way, San Diego, CA 92101
@@ -227,6 +239,10 @@ export const emailSequence = [
         <!-- Footer -->
         <tr>
           <td style="background-color: #f8fafc; padding: 30px; text-align: center; border-top: 1px solid #e2e8f0;">
+            <p style="color: #0f172a; font-size: 14px; line-height: 1.5; margin: 0 0 10px 0; font-weight: 600;">
+              Warmly,<br/>
+              The HAHU Educator Team
+            </p>
             <p style="color: #64748b; font-size: 13px; line-height: 1.5; margin: 0 0 10px 0;">
               Hunger Action Heroes Unite! &copy; 2026<br/>
               123 Heroes Way, San Diego, CA 92101
@@ -244,7 +260,7 @@ export const emailSequence = [
   },
   {
     week: 5,
-    subject: "The logistics of implementing Hunger Action Heroes",
+    subject: "The logistics of implementing HAHU without a subscription",
     html: `
 <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#ffffff; font-family: 'Inter', Helvetica, Arial, sans-serif;">
   <tr>
@@ -262,13 +278,13 @@ export const emailSequence = [
         <tr>
           <td style="padding: 40px 30px;">
             <p style="color: #334155; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
-              We understand that principals need to justify every budget line and protect instructional time.
+              We understand that principals need to justify every budget line and protect instructional time. We also know that you hate recurring software fees.
             </p>
             <p style="color: #334155; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
-              Implementation requires zero ongoing software subscriptions. We provide the physical <strong>Classroom Superhero Bundles</strong> which contain the comic books, educator guides, and student action plans. 
+              Implementation of HAHU requires <strong>zero ongoing software subscriptions</strong>. We provide the physical <em>Classroom Superhero Bundles</em> which contain the comic books, educator guides, and student action plans—everything your teachers need, permanently.
             </p>
             <p style="color: #334155; font-size: 16px; line-height: 1.6; margin: 0 0 30px 0;">
-              Our team provides onboarding support, ensuring your faculty feels confident executing the project-based learning model. The ROI is measured not just in meals rescued, but in discipline referrals dropped and community trust built.
+              Because our curriculum is deeply rooted in SEL and community engagement, many of our partner schools successfully fund the bundles through existing PTA grants or Title I community involvement allocations.
             </p>
             
             <table role="presentation" cellspacing="0" cellpadding="0" border="0">
@@ -284,6 +300,10 @@ export const emailSequence = [
         <!-- Footer -->
         <tr>
           <td style="background-color: #f8fafc; padding: 30px; text-align: center; border-top: 1px solid #e2e8f0;">
+            <p style="color: #0f172a; font-size: 14px; line-height: 1.5; margin: 0 0 10px 0; font-weight: 600;">
+              Warmly,<br/>
+              The HAHU Educator Team
+            </p>
             <p style="color: #64748b; font-size: 13px; line-height: 1.5; margin: 0 0 10px 0;">
               Hunger Action Heroes Unite! &copy; 2026<br/>
               123 Heroes Way, San Diego, CA 92101
@@ -320,13 +340,13 @@ export const emailSequence = [
         <tr>
           <td style="padding: 30px 30px 40px 30px;">
             <p style="color: #334155; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
-              Over the last few weeks, I’ve shared how our curriculum builds Cognitive Trust, drives verifiable social impact, and aligns with your state standards.
+              Over the last few weeks, we’ve shared how our curriculum builds Cognitive Trust, drives verifiable social impact, and aligns with your state standards.
             </p>
             <p style="color: #334155; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
               When students feel like heroes in their own community, the entire district benefits. They become resilient, engaged, and empathetic. 
             </p>
             <p style="color: #334155; font-size: 16px; line-height: 1.6; margin: 0 0 30px 0;">
-              I would love to walk you through a physical copy of our curriculum. Let’s schedule a brief 10-minute discovery call to see if this is the right fit for your schools.
+              We would love to walk you through a physical copy of our curriculum and discuss how other schools are bringing this to their students. Let’s schedule a brief 10-minute discovery call to see if this is the right fit for your district.
             </p>
             
             <!-- CTA Button -->
@@ -343,6 +363,10 @@ export const emailSequence = [
         <!-- Footer -->
         <tr>
           <td style="background-color: #f8fafc; padding: 30px; text-align: center; border-top: 1px solid #e2e8f0;">
+            <p style="color: #0f172a; font-size: 14px; line-height: 1.5; margin: 0 0 10px 0; font-weight: 600;">
+              Warmly,<br/>
+              The HAHU Educator Team
+            </p>
             <p style="color: #64748b; font-size: 13px; line-height: 1.5; margin: 0 0 10px 0;">
               Hunger Action Heroes Unite! &copy; 2026<br/>
               123 Heroes Way, San Diego, CA 92101
