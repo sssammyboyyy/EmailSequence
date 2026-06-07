@@ -70,6 +70,20 @@ export default function EmailPreview({ htmlContent, isDarkMode }) {
       <div style="max-width: 600px; margin: 0 auto; box-shadow: ${isDarkMode ? 'none' : '0 10px 15px -3px rgba(0, 0, 0, 0.1)'};">
         ${htmlContent}
       </div>
+      <script>
+        function applyScale() {
+          var width = window.innerWidth;
+          // The email content is max 600px, but with body padding it takes ~640px.
+          var targetWidth = 640;
+          if (width < targetWidth) {
+            document.body.style.zoom = width / targetWidth;
+          } else {
+            document.body.style.zoom = 1;
+          }
+        }
+        window.addEventListener('resize', applyScale);
+        applyScale();
+      </script>
     </body>
     </html>
   `;
